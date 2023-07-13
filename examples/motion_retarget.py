@@ -75,8 +75,9 @@ def custom_reward(**kwargs):
 
 
 env = gym.make('yumi-v0')
-env.render()
 observation = env.reset()
+env.render()
+
 
 motorsIds = []
 for joint in env.joints:
