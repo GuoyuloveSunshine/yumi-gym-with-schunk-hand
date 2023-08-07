@@ -2,8 +2,9 @@ import gym, yumi_gym
 import pybullet as p
 
 env = gym.make('yumi-v0')
-env.render()
 observation = env.reset()
+env.render()
+
 
 motorsIds = []
 for joint in env.joints:

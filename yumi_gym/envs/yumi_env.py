@@ -49,10 +49,12 @@ class YumiEnv(gym.Env):
                         "Link51",
                         "Link52",
                         "Link53", ]
-        self.action_space = spaces.Box(np.array([-1]*len(self.joints)), np.array([1]*len(self.joints)))
-        self.observation_space = spaces.Box(np.array([-1]*len(self.joints)), np.array([1]*len(self.joints)))
+        self.action_space = spaces.Box(np.array([-1]*len(self.joints), dtype=np.float32), np.array([1]*len(self.joints), dtype=np.float32))
+        self.observation_space = spaces.Box(np.array([-1]*len(self.joints), dtype=np.float32), np.array([1]*len(self.joints), dtype=np.float32))
+        print("Make environment!\n")
 
-    def step(self, action, custom_reward=None):
+    def step(self, action, custom_reward=None, **kwargs):
+        # print("Hello")
         p.configureDebugVisualizer(p.COV_ENABLE_SINGLE_STEP_RENDERING)
         p.setJointMotorControlArray(self.yumiUid, [self.joint2Index[joint] for joint in self.joints], p.POSITION_CONTROL, action)
         p.stepSimulation()

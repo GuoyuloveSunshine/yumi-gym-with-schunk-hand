@@ -29,14 +29,15 @@ class h5Parser(object):
         return X, Q
 
 
-parser = h5Parser("mocap_data_YuMi_affine_execute2.h5")
+parser = h5Parser("data/mocap_data_YuMi_affine_execute2.h5")
 X, Q = parser.parse("fengren.bag")
 max_episode = 200
 weightVector = np.ones([12])
 weightVector[:6] = 0.2  # elbow is less important
 
 
-def custom_reward(**kwargs):
+def design_custom_reward(**kwargs):
+    print("kwargs: ",kwargs)
     # reward for position similarity
     joints = ['yumi_joint_4_l', 'yumi_joint_4_r', 'yumi_joint_7_l', 'yumi_joint_7_r']
     reference_pos = X[:, -1, :3]
@@ -83,6 +84,8 @@ motorsIds = []
 for joint in env.joints:
     motorsIds.append(p.addUserDebugParameter(joint, -1, 1, 0))
 
+print("motorsIds: ", motorsIds)
+
 while True:
     env.render()
 
@@ -90,5 +93,5 @@ while True:
     action = []
     for motorId in motorsIds:
         action.append(p.readUserDebugParameter(motorId))
-
-    observation, reward, done, info = env.step(action, custom_reward)
+    print()
+    observation, reward, done, info = env.step(action, custom_reward=design_custom_reward)
