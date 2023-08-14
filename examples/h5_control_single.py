@@ -5,7 +5,7 @@ import h5py
 import time
 
 
-hf = h5py.File('./data/inference.h5', 'r')
+hf = h5py.File('./data/inference_jiqiren.h5', 'r')
 key = "group1"
 # hf = h5py.File('./data/mocap_data_YuMi_affine_execute.h5', 'r')
 # key = 'fengren.bag'
@@ -39,7 +39,8 @@ while flag:
     env.render()
     for t in range(total_frames):
         for i in range(1):
-            print(t, l_hand_angle.shape, l_hand_angle[t] * 180 / np.pi)
+            # print(t, l_hand_angle.shape, l_hand_angle[t] * 180 / np.pi)
+            print("frame: ", t)
             action = l_joint_angle[t].tolist() + r_joint_angle[t].tolist() + l_hand_angle[t].tolist() + r_hand_angle[t].tolist()
             observation, reward, done, info = env.step(action)
             time.sleep(0.02)
