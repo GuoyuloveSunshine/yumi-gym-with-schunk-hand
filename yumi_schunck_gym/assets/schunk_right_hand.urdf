@@ -226,8 +226,8 @@
       </collision>
     </link>
 
-    <!-- MIDDLE FINGER LINKS -->
-    <link name="virtual_k">
+  <!-- MIDDLE FINGER LINKS -->
+    <link name="virtual_middle_1">
       <visual>
         <origin xyz="0 0 0.01321" />
         <geometry>
@@ -242,7 +242,7 @@
       </collision>
     </link>
 
-    <link name="k">
+    <link name="middle_2">
       <visual>
         <geometry>
           <mesh filename="package://meshes/f21.dae" />
@@ -255,7 +255,7 @@
       </collision>
     </link>
 
-    <link name="o">
+    <link name="middle_3">
       <visual>
         <geometry>
           <mesh filename="package://meshes/f22.dae" />
@@ -268,7 +268,7 @@
       </collision>
     </link>
 
-    <link name="s">
+    <link name="middle_4">
       <visual>
         <geometry>
           <mesh filename="package://meshes/f23.dae" />
@@ -539,29 +539,29 @@
   <!-- MIDDLE FINGER JOINTS -->
     <joint name="Middle_Spread_Dummy" type="fixed">
       <parent link="d" />
-      <child link="virtual_k" />
+      <child link="virtual_middle_1" />
       <origin xyz="0 0 0.110" rpy="0 -1.5707 1.5707" />
     </joint>
 
     <joint name="Middle_Proximal" type="revolute">
-      <parent link="virtual_k" />
-      <child link="k" />
+      <parent link="virtual_middle_1" />
+      <child link="middle_2" />
       <limit effort="1000.0" lower="0.0" upper="0.79849" velocity="1" />
       <origin xyz="0 0 0" rpy="-1.5707 0 0" />
       <axis xyz="0 0 1" />
     </joint>
 
     <joint name="Middle_3" type="revolute">
-      <parent link="k" />
-      <child link="o" />
+      <parent link="middle_2" />
+      <child link="middle_3" />
       <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
       <origin xyz="0.05004 0 0" rpy="0 0 0" />
       <axis xyz="0 0 1" />
     </joint>
 
     <joint name="Middle_4" type="revolute">
-      <parent link="o" />
-      <child link="s" />
+      <parent link="middle_3" />
+      <child link="middle_4" />
       <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
       <origin xyz="0.032 0 0" rpy="0 0 0" />
       <axis xyz="0 0 1" />
