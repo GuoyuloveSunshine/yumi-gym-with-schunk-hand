@@ -508,7 +508,7 @@
       <limit effort="1000.0" lower="0.0" upper="0.28833" velocity="1" />
       <origin xyz="-0.025 0 0.110" rpy="0 -1.5707 1.5707" />
       <axis xyz="0 0 1" />
-      <mimic joint="Finger_Spread" multiplier="0.5" offset="0" />
+      <mimic joint="Pinky_Spread" multiplier="0.5" offset="0" />
     </joint>
 
     <joint name="Index_Proximal" type="revolute">
@@ -569,8 +569,17 @@
     </joint>
 
 
-    <!-- RING FINGER JOINTS -->
-    <joint name="Ring_Finger" type="revolute">
+  <!-- RING FINGER JOINTS -->
+    <joint name="Ring_Spread" type="revolute">
+      <parent link="e5" />
+      <child link="virtual_j" />
+      <limit effort="1000.0" lower="0.0" upper="0.28833" velocity="1" />
+      <origin xyz="0.003855 0 0.0655" rpy="-1.5707 -1.5707 0" />
+      <axis xyz="0 0 1" />
+      <mimic joint="Pinky_Spread" multiplier="0.5" offset="0" />
+    </joint>
+
+    <joint name="Ring_Proximal" type="revolute">
       <parent link="virtual_j" />
       <child link="j" />
       <limit effort="1000.0" lower="0.0" upper="0.98175" velocity="1" />
@@ -578,66 +587,27 @@
       <axis xyz="0 0 1" />
     </joint>
 
-    <joint name="j12" type="revolute">
+    <joint name="Ring_3" type="revolute">
       <parent link="j" />
       <child link="n" />
       <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
       <origin xyz="0.05004 0 0" rpy="0 0 0" />
       <axis xyz="0 0 1" />
-      <mimic joint="Ring_Finger" multiplier="1.3588" offset="0" />
+      <mimic joint="Ring_Proximal" multiplier="1.3588" offset="0" />
     </joint>
 
-    <joint name="j16" type="revolute">
+    <joint name="Ring_4" type="revolute">
       <parent link="n" />
       <child link="r" />
       <limit effort="1000.0" lower="0" upper="1.395" velocity="1" />
       <origin xyz="0.032 0 0" rpy="0 0 0" />
       <axis xyz="0 0 1" />
-      <mimic joint="Ring_Finger" multiplier="1.42093" offset="0" />
+      <mimic joint="Ring_Proximal" multiplier="1.42093" offset="0" />
     </joint>
 
 
-    <!-- PINKY JOINTS -->
-    <joint name="Pinky" type="revolute">
-      <parent link="virtual_i" />
-      <child link="i" />
-      <limit effort="1000.0" lower="0.0" upper="0.98175" velocity="1" />
-      <origin xyz="0 0 0" rpy="1.5707 0 0" />
-      <axis xyz="0 0 1" />
-    </joint>
-
-    <joint name="j13" type="revolute">
-      <parent link="i" />
-      <child link="m" />
-      <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
-      <origin xyz="0.04454 0 0" rpy="0 0 0" />
-      <axis xyz="0 0 1" />
-      <mimic joint="Pinky" multiplier="1.35880" offset="0" />
-    </joint>
-
-    <joint name="j17" type="revolute">
-      <parent link="m" />
-      <child link="q" />
-      <limit effort="1000.0" lower="0" upper="1.3971" velocity="1" />
-      <origin xyz="0.022 0 0" rpy="0 0 0" />
-      <axis xyz="0 0 1" />
-      <mimic joint="Pinky" multiplier="1.42307" offset="0" />
-    </joint>
-
-
-
-
-
-    <joint name="ring_spread" type="revolute">
-      <parent link="e5" />
-      <child link="virtual_j" />
-      <limit effort="1000.0" lower="0.0" upper="0.28833" velocity="1" />
-      <origin xyz="0.003855 0 0.0655" rpy="-1.5707 -1.5707 0" />
-      <axis xyz="0 0 1" />
-      <mimic joint="Finger_Spread" multiplier="0.5" offset="0" />
-    </joint>
-
-    <joint name="Finger_Spread" type="revolute">
+  <!-- PINKY JOINTS -->
+    <joint name="Pinky_Spread" type="revolute">
       <parent link="e4" />
       <child link="virtual_i" />
       <limit effort="1000.0" lower="0.0" upper="0.5829" velocity="1" />
@@ -645,5 +615,30 @@
       <axis xyz="0 0 1" />
     </joint>
 
+    <joint name="Pinky_Proximal" type="revolute">
+      <parent link="virtual_i" />
+      <child link="i" />
+      <limit effort="1000.0" lower="0.0" upper="0.98175" velocity="1" />
+      <origin xyz="0 0 0" rpy="1.5707 0 0" />
+      <axis xyz="0 0 1" />
+    </joint>
+
+    <joint name="Pinky_3" type="revolute">
+      <parent link="i" />
+      <child link="m" />
+      <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
+      <origin xyz="0.04454 0 0" rpy="0 0 0" />
+      <axis xyz="0 0 1" />
+      <mimic joint="Pinky_Proximal" multiplier="1.35880" offset="0" />
+    </joint>
+
+    <joint name="Pinky_4" type="revolute">
+      <parent link="m" />
+      <child link="q" />
+      <limit effort="1000.0" lower="0" upper="1.3971" velocity="1" />
+      <origin xyz="0.022 0 0" rpy="0 0 0" />
+      <axis xyz="0 0 1" />
+      <mimic joint="Pinky_Proximal" multiplier="1.42307" offset="0" />
+    </joint>
 
 </robot>
