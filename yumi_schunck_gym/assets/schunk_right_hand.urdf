@@ -130,7 +130,9 @@
     </link>
 
 
-    <link name="virtual_a"/>
+    <link name="virtual_a">
+    </link>
+
     <link name="a">
       <visual>
         <geometry>
