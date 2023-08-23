@@ -392,31 +392,12 @@
       </collision>
     </link>
 
-    <joint name="Thumb_Flexion" type="revolute">
-      <parent link="virtual_a" />
-      <child link="a" />
-      <limit effort="1000.0" lower="0.0" upper="0.9704" velocity="1" />
-      <origin xyz="0 0 0" rpy="0 0 -0.9704" />
-      <axis xyz="0 0 1" />
-    </joint>
 
 
-    <joint name="Thumb_Helper" type="fixed">
-      <parent link="z" />
-      <child link="virtual_a" />
-      <origin xyz="0 0 0.04596" rpy="0 -1.5707 3.1416" />
-    </joint>
 
 
 
     <!-- BASE_LINE JOINTS -->
-    <joint name="Thumb_Opposition" type="revolute">
-      <parent link="e1" />
-      <child link="z" />
-      <limit effort="1000.0" lower="0.0" upper="0.9879" velocity="1" />
-      <origin xyz="-0.01690 0.02626 0" rpy="0 0.2618 1.571" />
-      <axis xyz="0 0 -1" />
-    </joint>
 
     <!-- JOINT NOT FOR BASE_LINE. BUT WRITTEN DOWN HERE FOR BETTER UX -->
     <joint name="f1" type="fixed">
@@ -482,6 +463,29 @@
 
 
     <!-- THUMB JOINTS -->
+
+    <joint name="Thumb_Opposition" type="revolute">
+      <parent link="e1" />
+      <child link="z" />
+      <limit effort="1000.0" lower="0.0" upper="0.9879" velocity="1" />
+      <origin xyz="-0.01690 0.02626 0" rpy="0 0.2618 1.571" />
+      <axis xyz="0 0 -1" />
+    </joint>
+
+    <joint name="Thumb_Helper" type="fixed">
+      <parent link="z" />
+      <child link="virtual_a" />
+      <origin xyz="0 0 0.04596" rpy="0 -1.5707 3.1416" />
+    </joint>
+    
+    <joint name="Thumb_Flexion" type="revolute">
+      <parent link="virtual_a" />
+      <child link="a" />
+      <limit effort="1000.0" lower="0.0" upper="0.9704" velocity="1" />
+      <origin xyz="0 0 0" rpy="0 0 -0.9704" />
+      <axis xyz="0 0 1" />
+    </joint>
+
     <joint name="Thumb_3" type="revolute">
       <parent link="a" />
       <child link="b" />
@@ -501,13 +505,7 @@
     </joint>
 
     <!-- INDEX FINGER JOINTS -->
-    <joint name="Index_3" type="revolute">
-      <parent link="l" />
-      <child link="p" />
-      <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
-      <origin xyz="0.04804 0 0" rpy="0 0 0" />
-      <axis xyz="0 0 1" />
-    </joint>
+
 
     <joint name="Index_Finger_Proximal" type="revolute">
       <parent link="virtual_l" />
@@ -517,7 +515,14 @@
       <axis xyz="0 0 1" />
     </joint>
 
-    <!-- JOINT Finger_Spread in BASE_LINE section for better UX -->
+    <joint name="Index_3" type="revolute">
+      <parent link="l" />
+      <child link="p" />
+      <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
+      <origin xyz="0.04804 0 0" rpy="0 0 0" />
+      <axis xyz="0 0 1" />
+    </joint>
+
     <joint name="Index_4" type="revolute">
       <parent link="p" />
       <child link="t" />
