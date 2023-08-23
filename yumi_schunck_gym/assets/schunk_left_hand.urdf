@@ -169,7 +169,7 @@
     </link>
 
 
-    <!-- INDEX FINGER LINKS -->
+  <!-- INDEX FINGER LINKS -->
     <link name="virtual_index_1">
       <visual>
         <origin xyz="0 0 0.01321" />
@@ -224,7 +224,7 @@
       </collision>
     </link>
 
-    <!-- MIDDLE FINGER LINKS -->
+  <!-- MIDDLE FINGER LINKS -->
     <link name="virtual_middle_1">
       <visual>
         <origin xyz="0 0 0.01321" />

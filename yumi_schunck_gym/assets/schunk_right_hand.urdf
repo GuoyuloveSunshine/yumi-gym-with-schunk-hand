@@ -171,8 +171,8 @@
     </link>
 
 
-    <!-- INDEX FINGER LINKS -->
-    <link name="virtual_l">
+  <!-- INDEX FINGER LINKS -->
+    <link name="virtual_index_1">
       <visual>
         <origin xyz="0 0 0.01321" />
         <geometry>
@@ -187,7 +187,7 @@
       </collision>
     </link>
 
-    <link name="l">
+    <link name="index_2">
       <visual>
         <geometry>
           <mesh filename="package://meshes/f11.dae" />
@@ -200,7 +200,7 @@
       </collision>
     </link>
 
-    <link name="p">
+    <link name="index_3">
       <visual>
         <geometry>
           <mesh filename="package://meshes/f12.dae" />
@@ -213,7 +213,7 @@
       </collision>
     </link>
 
-    <link name="t">
+    <link name="index_4">
       <visual>
         <geometry>
           <mesh filename="package://meshes/f13.dae" />
@@ -504,7 +504,7 @@
   <!-- INDEX FINGER JOINTS -->
     <joint name="Index_Spread" type="revolute">
       <parent link="d2" />
-      <child link="virtual_l" />
+      <child link="virtual_index_1" />
       <limit effort="1000.0" lower="0.0" upper="0.28833" velocity="1" />
       <origin xyz="-0.025 0 0.110" rpy="0 -1.5707 1.5707" />
       <axis xyz="0 0 1" />
@@ -512,24 +512,24 @@
     </joint>
 
     <joint name="Index_Proximal" type="revolute">
-      <parent link="virtual_l" />
-      <child link="l" />
+      <parent link="virtual_index_1" />
+      <child link="index_2" />
       <limit effort="1000.0" lower="0.0" upper="0.79849" velocity="1" />
       <origin xyz="0 0 0" rpy="-1.5707 0 0" />
       <axis xyz="0 0 1" />
     </joint>
 
     <joint name="Index_3" type="revolute">
-      <parent link="l" />
-      <child link="p" />
+      <parent link="index_2" />
+      <child link="index_3" />
       <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
       <origin xyz="0.04804 0 0" rpy="0 0 0" />
       <axis xyz="0 0 1" />
     </joint>
 
     <joint name="Index_4" type="revolute">
-      <parent link="p" />
-      <child link="t" />
+      <parent link="index_3" />
+      <child link="index_4" />
       <limit effort="1000.0" lower="0" upper="1.394" velocity="1" />
       <origin xyz="0.026 0 0" rpy="0 0 0" />
       <axis xyz="0 0 1" />
