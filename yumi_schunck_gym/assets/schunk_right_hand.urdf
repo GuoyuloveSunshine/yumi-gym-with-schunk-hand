@@ -501,10 +501,17 @@
       <mimic joint="Thumb_Flexion" multiplier="1.44889" offset="0" />
     </joint>
 
-    <!-- INDEX FINGER JOINTS -->
+  <!-- INDEX FINGER JOINTS -->
+    <joint name="Index_Spread" type="revolute">
+      <parent link="d2" />
+      <child link="virtual_l" />
+      <limit effort="1000.0" lower="0.0" upper="0.28833" velocity="1" />
+      <origin xyz="-0.025 0 0.110" rpy="0 -1.5707 1.5707" />
+      <axis xyz="0 0 1" />
+      <mimic joint="Finger_Spread" multiplier="0.5" offset="0" />
+    </joint>
 
-
-    <joint name="Index_Finger_Proximal" type="revolute">
+    <joint name="Index_Proximal" type="revolute">
       <parent link="virtual_l" />
       <child link="l" />
       <limit effort="1000.0" lower="0.0" upper="0.79849" velocity="1" />
@@ -529,8 +536,14 @@
       <mimic joint="Index_3" multiplier="1.0450" offset="0" />
     </joint>
 
-    <!-- MIDDLE FINGER JOINTS -->
-    <joint name="Middle_Finger_Proximal" type="revolute">
+  <!-- MIDDLE FINGER JOINTS -->
+    <joint name="Middle_Spread_Dummy" type="fixed">
+      <parent link="d" />
+      <child link="virtual_k" />
+      <origin xyz="0 0 0.110" rpy="0 -1.5707 1.5707" />
+    </joint>
+
+    <joint name="Middle_Proximal" type="revolute">
       <parent link="virtual_k" />
       <child link="k" />
       <limit effort="1000.0" lower="0.0" upper="0.79849" velocity="1" />
@@ -612,20 +625,7 @@
     </joint>
 
 
-    <joint name="index_spread" type="revolute">
-      <parent link="d2" />
-      <child link="virtual_l" />
-      <limit effort="1000.0" lower="0.0" upper="0.28833" velocity="1" />
-      <origin xyz="-0.025 0 0.110" rpy="0 -1.5707 1.5707" />
-      <axis xyz="0 0 1" />
-      <mimic joint="Finger_Spread" multiplier="0.5" offset="0" />
-    </joint>
 
-    <joint name="middle_spread_dummy" type="fixed">
-      <parent link="d" />
-      <child link="virtual_k" />
-      <origin xyz="0 0 0.110" rpy="0 -1.5707 1.5707" />
-    </joint>
 
 
     <joint name="ring_spread" type="revolute">
