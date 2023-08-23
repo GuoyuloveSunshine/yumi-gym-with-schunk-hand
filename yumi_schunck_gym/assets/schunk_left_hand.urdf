@@ -335,8 +335,8 @@
       </collision>
     </link>
 
-  <!-- LITTLE FINGER LINKS -->
-    <link name="virtual_little_1">
+  <!-- PINKY FINGER LINKS -->
+    <link name="virtual_pinky_1">
       <visual>
         <origin xyz="0 0 -0.01321" />
         <geometry>
@@ -351,7 +351,7 @@
       </collision>
     </link>
 
-    <link name="little_2">
+    <link name="pinky_2">
       <visual>
         <geometry>
           <mesh filename="package://meshes/f41.dae" />
@@ -364,7 +364,7 @@
       </collision>
     </link>
 
-    <link name="little_3">
+    <link name="pinky_3">
       <visual>
         <geometry>
           <mesh filename="package://meshes/f42.dae" />
@@ -377,7 +377,7 @@
       </collision>
     </link>
 
-    <link name="little_4">
+    <link name="pinky_4">
       <visual>
         <geometry>
           <mesh filename="package://meshes/f43.dae" />
@@ -391,9 +391,6 @@
     </link>
 
 
-  
-  
-  
   
   <!-- BASE_LINE JOINTS -->
     <!-- JOINT NOT FOR BASE_LINE. BUT WRITTEN DOWN HERE FOR BETTER UX -->
@@ -606,23 +603,23 @@
   <!-- PINKY JOINTS -->
     <joint name="Pinky_Spread" type="revolute">
       <parent link="e4" />
-      <child link="virtual_little_1" />
+      <child link="virtual_pinky_1" />
       <limit effort="1000.0" lower="0.0" upper="0.5829" velocity="1" />
       <origin xyz="-0.025355 0 0.056" rpy="-1.5707 -1.5707 0" />
       <axis xyz="0 0 -1" />
     </joint>
 
     <joint name="Pinky_Proximal" type="revolute">
-      <parent link="virtual_little_1" />
-      <child link="little_2" />
+      <parent link="virtual_pinky_1" />
+      <child link="pinky_2" />
       <limit effort="1000.0" lower="0.0" upper="0.98175" velocity="1" />
       <origin xyz="0 0 0" rpy="1.5707 0 0" />
       <axis xyz="0 0 1" />
     </joint>
 
     <joint name="Pinky_3" type="revolute">
-      <parent link="little_2" />
-      <child link="little_3" />
+      <parent link="pinky_2" />
+      <child link="pinky_3" />
       <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
       <origin xyz="0.04454 0 0" rpy="0 0 0" />
       <axis xyz="0 0 1" />
@@ -630,8 +627,8 @@
     </joint>
 
     <joint name="Pinky_4" type="revolute">
-      <parent link="little_3" />
-      <child link="little_4" />
+      <parent link="pinky_3" />
+      <child link="pinky_4" />
       <limit effort="1000.0" lower="0" upper="1.3971" velocity="1" />
       <origin xyz="0.022 0 0" rpy="0 0 0" />
       <axis xyz="0 0 1" />
