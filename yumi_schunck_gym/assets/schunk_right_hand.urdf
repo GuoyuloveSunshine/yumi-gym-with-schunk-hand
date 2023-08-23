@@ -282,8 +282,8 @@
     </link>
 
 
-    <!-- RING FINGER LINKS -->
-    <link name="virtual_j">
+  <!-- RING FINGER LINKS -->
+    <link name="virtual_ring_1">
       <visual>
         <origin xyz="0 0 -0.01321" />
         <geometry>
@@ -298,7 +298,7 @@
       </collision>
     </link>
 
-    <link name="j">
+    <link name="ring_2">
       <visual>
         <geometry>
           <mesh filename="package://meshes/f31.dae" />
@@ -311,7 +311,7 @@
       </collision>
     </link>
 
-    <link name="n">
+    <link name="ring_3">
       <visual>
         <geometry>
           <mesh filename="package://meshes/f32.dae" />
@@ -324,7 +324,7 @@
       </collision>
     </link>
 
-    <link name="r">
+    <link name="ring_4">
       <visual>
         <geometry>
           <mesh filename="package://meshes/f33.dae" />
@@ -337,8 +337,8 @@
       </collision>
     </link>
 
-    <!-- LITTLE FINGER LINKS -->
-    <link name="virtual_i">
+  <!-- PINKY FINGER LINKS -->
+    <link name="virtual_pinky_1">
       <visual>
         <origin xyz="0 0 -0.01321" />
         <geometry>
@@ -353,7 +353,7 @@
       </collision>
     </link>
 
-    <link name="i">
+    <link name="pinky_2">
       <visual>
         <geometry>
           <mesh filename="package://meshes/f41.dae" />
@@ -366,7 +366,7 @@
       </collision>
     </link>
 
-    <link name="m">
+    <link name="pinky_3">
       <visual>
         <geometry>
           <mesh filename="package://meshes/f42.dae" />
@@ -379,7 +379,7 @@
       </collision>
     </link>
 
-    <link name="q">
+    <link name="pinky_4">
       <visual>
         <geometry>
           <mesh filename="package://meshes/f43.dae" />
@@ -572,7 +572,7 @@
   <!-- RING FINGER JOINTS -->
     <joint name="Ring_Spread" type="revolute">
       <parent link="e5" />
-      <child link="virtual_j" />
+      <child link="virtual_ring_1" />
       <limit effort="1000.0" lower="0.0" upper="0.28833" velocity="1" />
       <origin xyz="0.003855 0 0.0655" rpy="-1.5707 -1.5707 0" />
       <axis xyz="0 0 1" />
@@ -580,16 +580,16 @@
     </joint>
 
     <joint name="Ring_Proximal" type="revolute">
-      <parent link="virtual_j" />
-      <child link="j" />
+      <parent link="virtual_ring_1" />
+      <child link="ring_2" />
       <limit effort="1000.0" lower="0.0" upper="0.98175" velocity="1" />
       <origin xyz="0 0 0" rpy="1.5707 0 0" />
       <axis xyz="0 0 1" />
     </joint>
 
     <joint name="Ring_3" type="revolute">
-      <parent link="j" />
-      <child link="n" />
+      <parent link="ring_2" />
+      <child link="ring_3" />
       <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
       <origin xyz="0.05004 0 0" rpy="0 0 0" />
       <axis xyz="0 0 1" />
@@ -597,8 +597,8 @@
     </joint>
 
     <joint name="Ring_4" type="revolute">
-      <parent link="n" />
-      <child link="r" />
+      <parent link="ring_3" />
+      <child link="ring_4" />
       <limit effort="1000.0" lower="0" upper="1.395" velocity="1" />
       <origin xyz="0.032 0 0" rpy="0 0 0" />
       <axis xyz="0 0 1" />
@@ -609,23 +609,23 @@
   <!-- PINKY JOINTS -->
     <joint name="Pinky_Spread" type="revolute">
       <parent link="e4" />
-      <child link="virtual_i" />
+      <child link="virtual_pinky_1" />
       <limit effort="1000.0" lower="0.0" upper="0.5829" velocity="1" />
       <origin xyz="0.025355 0 0.056" rpy="-1.5707 -1.5707 0" />
       <axis xyz="0 0 1" />
     </joint>
 
     <joint name="Pinky_Proximal" type="revolute">
-      <parent link="virtual_i" />
-      <child link="i" />
+      <parent link="virtual_pinky_1" />
+      <child link="pinky_2" />
       <limit effort="1000.0" lower="0.0" upper="0.98175" velocity="1" />
       <origin xyz="0 0 0" rpy="1.5707 0 0" />
       <axis xyz="0 0 1" />
     </joint>
 
     <joint name="Pinky_3" type="revolute">
-      <parent link="i" />
-      <child link="m" />
+      <parent link="pinky_2" />
+      <child link="pinky_3" />
       <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
       <origin xyz="0.04454 0 0" rpy="0 0 0" />
       <axis xyz="0 0 1" />
@@ -633,8 +633,8 @@
     </joint>
 
     <joint name="Pinky_4" type="revolute">
-      <parent link="m" />
-      <child link="q" />
+      <parent link="pinky_3" />
+      <child link="pinky_4" />
       <limit effort="1000.0" lower="0" upper="1.3971" velocity="1" />
       <origin xyz="0.022 0 0" rpy="0 0 0" />
       <axis xyz="0 0 1" />
