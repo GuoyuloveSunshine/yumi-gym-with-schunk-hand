@@ -448,7 +448,7 @@
     </joint>
 
   <!-- HAND JOINTS -->
-    <joint name="Part_hand" type="revolute">
+    <joint name="Part_Hand" type="revolute">
       <parent link="e1" />
       <child link="e2" />
       <limit effort="1000.0" lower="0.0" upper="0.98786" velocity="1" />

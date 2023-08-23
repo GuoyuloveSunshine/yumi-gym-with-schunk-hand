@@ -397,8 +397,7 @@
 
 
 
-    <!-- BASE_LINE JOINTS -->
-
+  <!-- BASE_LINE JOINTS -->
     <!-- JOINT NOT FOR BASE_LINE. BUT WRITTEN DOWN HERE FOR BETTER UX -->
     <joint name="f1" type="fixed">
       <parent link="e1" />
@@ -423,15 +422,6 @@
       <parent link="base_link" />
       <child link="e1" />
       <origin xyz="0 -0.01313 0" rpy="0 0 0" />
-    </joint>
-
-    <joint name="$j5" type="revolute">
-      <parent link="e1" />
-      <child link="e2" />
-      <limit effort="1000.0" lower="0.0" upper="0.98786" velocity="1" />
-      <origin xyz="0.01840 0.006 0.0375" rpy="0 0 0" />
-      <axis xyz="0 0 1" />
-      <mimic joint="Thumb_Opposition" multiplier="1" offset="0" />
     </joint>
 
     <joint name="f5" type="fixed">
@@ -459,11 +449,18 @@
     </joint>
 
 
+  <!-- HAND JOINT -->
+    <joint name="Part_Hand" type="revolute">
+      <parent link="e1" />
+      <child link="e2" />
+      <limit effort="1000.0" lower="0.0" upper="0.98786" velocity="1" />
+      <origin xyz="0.01840 0.006 0.0375" rpy="0 0 0" />
+      <axis xyz="0 0 1" />
+      <mimic joint="Thumb_Opposition" multiplier="1" offset="0" />
+    </joint>
 
 
-
-    <!-- THUMB JOINTS -->
-
+  <!-- THUMB JOINTS -->
     <joint name="Thumb_Opposition" type="revolute">
       <parent link="e1" />
       <child link="z" />
