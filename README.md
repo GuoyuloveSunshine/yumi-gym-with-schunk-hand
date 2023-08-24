@@ -1,7 +1,7 @@
-# yumi-gym
-gym env for collaborative robot yumi with pybullet
+# yumi gym with schunk hand and inspire hand
+Combine schunk hand with ABB Yumi robot, the project is based on [yumi-gym](https://github.com/0aqz0/yumi-gym) which is a gym env for collaborative robot yumi with pybullet
 
-![yumi](images/yumi.png)
+![yumi](images/yumi-schunk.png)
 
 **features**
 
@@ -13,7 +13,7 @@ gym env for collaborative robot yumi with pybullet
 ## Installation
 
 ```bash
-$ git clone git@github.com:0aqz0/yumi-gym.git
+$ git clone git@github.com:GuoyuloveSunshine/yumi-gym.git
 $ cd yumi-gym
 $ pip install -e .
 ```
@@ -23,7 +23,7 @@ $ pip install -e .
 ```python
 import gym, yumi_gym
 
-env = gym.make('yumi-v0')
+env = gym.make('yumi-schunk')
 env.render()
 observation = env.reset()
 
@@ -35,6 +35,8 @@ while True:
     observation, reward, done, info = env.step(action)
 ```
 ## References
+
+- [yumi-gym](https://github.com/0aqz0/yumi-gym)
 
 - [PyBullet Quickstart Guide](https://docs.google.com/document/d/10sXEhzFRSnvFcl3XxNGhnD4N2SedqwdAvK3dsihxVUA/edit#heading=h.p3s2oveabizm)
 

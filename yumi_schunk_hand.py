@@ -122,10 +122,10 @@ def yumi_arm():
         p.stepSimulation()
 
 def yumi_with_schunk_hands():
-    p.connect(p.GUI) #连接到仿真环境，p.DIREACT是不显示仿真界面,p.GUI则为显示仿真界面
+    p.connect(p.GUI) # p.DIREACT without viewer,p.GUI with viewer
     p.resetDebugVisualizerCamera(cameraDistance=1.5, cameraYaw=90, cameraPitch=-20, cameraTargetPosition=[0, 0, 0.1])
-    p.setGravity(0,0,-10) #设定重力
-    p.resetSimulation() #重置仿真环境
+    p.setGravity(0,0,-10) # set gravity
+    p.resetSimulation() # reset simulator
     p.setAdditionalSearchPath(pybullet_data.getDataPath()) #添加pybullet的额外数据地址，使程序可以直接调用到内部的一些模型
     LShandId = p.loadURDF(os.path.join(os.path.dirname(os.path.realpath(__file__)),
                                        "yumi_gym","envs","assets","yumi_with_schunk_hands.urdf"),

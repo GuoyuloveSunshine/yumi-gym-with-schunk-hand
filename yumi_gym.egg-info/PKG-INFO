@@ -34,7 +34,7 @@ $ pip install -e .
 ```python
 import gym, yumi_gym
 
-env = gym.make('yumi-v0')
+env = gym.make('yumi-inspire')
 env.render()
 observation = env.reset()
 

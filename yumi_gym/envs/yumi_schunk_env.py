@@ -78,11 +78,21 @@ class YumiSchunkEnv(gym.Env):
         p.setPhysicsEngineParameter(numSolverIterations=150)
         p.setTimeStep(1./240.)
         self.joint2Index = {}  # jointIndex map to jointName
+        self.joint2Limits = {} # jointLimits map to jointName
         for i in range(p.getNumJoints(self.yumiUid)):
             self.joint2Index[p.getJointInfo(self.yumiUid, i)[1].decode('utf-8')] = i
+            self.joint2Limits[p.getJointInfo(self.yumiUid, i)[1].decode('utf-8')] = [float(p.getJointInfo(self.yumiUid, i)[8]), float(p.getJointInfo(self.yumiUid, i)[9])]
         self.jointColor = {}  # jointName map to jointColor
         for data in p.getVisualShapeData(self.yumiUid):
             self.jointColor[p.getJointInfo(self.yumiUid, data[1])[1].decode('utf-8')] = data[7]
+        
+        # self.joints_limit_lower = np.array([self.joint2Limits[joint][0] for joint in self.joints],  dtype=np.float32)
+        # self.joints_limit_upper = np.array([self.joint2Limits[joint][1] for joint in self.joints],  dtype=np.float32)
+        # print(self.joints_limit_lower)
+        # print(self.joints_limit_upper)
+        # self.action_space = spaces.Box(self.joints_limit_lower, self.joints_limit_upper)
+        # self.observation_space = spaces.Box(self.joints_limit_lower, self.joints_limit_upper)
+
         # recover color
         for joint, index in self.joint2Index.items():
             if joint in self.jointColor and joint != 'world_joint':

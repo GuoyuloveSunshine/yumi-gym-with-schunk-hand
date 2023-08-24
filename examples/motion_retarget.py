@@ -75,7 +75,7 @@ def design_custom_reward(**kwargs):
     return reward, done
 
 
-env = gym.make('yumi-v0')
+env = gym.make('yumi-inspire')
 observation = env.reset()
 env.render()
 

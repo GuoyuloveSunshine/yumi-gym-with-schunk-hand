@@ -11,7 +11,7 @@ for root, dirs, files in os.walk(directory):
 
 setup(
     name='yumi-gym',
-    version='0.0.3',
+    version='1.0.3',
     packages=find_packages(),
     package_data={'yumi_gym': data_files},
     include_package_data=True,
@@ -19,8 +19,8 @@ setup(
     description="Physics simulation for ABB's collaborative robot yumi",
     long_description=Path("README.md").read_text(),
     long_description_content_type="text/markdown",
-    url='https://github.com/0aqz0/yumi-gym',
-    author='Haodong Zhang',
-    author_email='aqz@zju.edu.cn',
+    url='https://github.com/GuoyuloveSunshine/yumi-gym',
+    author='MA Ziqi',
+    author_email='maziqi@sjtu.edu.cn',
     license='MIT',
 )

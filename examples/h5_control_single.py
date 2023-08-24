@@ -29,7 +29,7 @@ r_hand_angle = group1.get('r_glove_angle')
 
 total_frames = l_joint_angle.shape[0]
 print(l_joint_angle.shape, r_joint_angle.shape)
-env = gym.make('yumi-v0')
+env = gym.make('yumi-inspire')
 observation = env.reset()
 env.render()
 
