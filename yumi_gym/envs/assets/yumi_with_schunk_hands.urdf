@@ -1,0 +1,1769 @@
+<?xml version="1.0" ?>
+<robot name="yumi" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <material name="Black">
+    <color rgba="0.0 0.0 0.0 1.0"/>
+  </material>
+  <material name="Blue">
+    <color rgba="0.0 0.0 0.8 1.0"/>
+  </material>
+  <material name="Green">
+    <color rgba="0.0 0.8 0.0 1.0"/>
+  </material>
+  <material name="Grey">
+    <color rgba="0.5 0.5 0.5 1.0"/>
+  </material>
+  <material name="Light_Grey">
+    <color rgba="0.8 0.8 0.8 1.0"/>
+  </material>
+  <material name="Ivory">
+    <color rgba="1.0 1.0 0.94 1.0"/>
+  </material>
+  <material name="Orange">
+    <color rgba="1.0 0.423529411765 0.0392156862745 1.0"/>
+  </material>
+  <material name="Brown">
+    <color rgba="0.870588235294 0.811764705882 0.764705882353 1.0"/>
+  </material>
+  <material name="Red">
+    <color rgba="0.8 0.0 0.0 1.0"/>
+  </material>
+  <material name="White">
+    <color rgba="1.0 1.0 1.0 1.0"/>
+  </material>
+
+
+  <link name="yumi_base_link"/>
+  <joint name="yumi_base_link_to_body" type="fixed">
+    <parent link="yumi_base_link"/>
+    <child link="yumi_body"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <link name="yumi_body">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="15"/>
+      <inertia ixx="0.5" ixy="0" ixz="0" iyy="0.6" iyz="0" izz="0.3"/>
+    </inertial>
+<!--     <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://meshes/body.stl"/>
+      </geometry>
+      <material name="Light_Grey"/>
+    </visual> -->
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://meshes/coarse/body.stl"/>
+      </geometry>
+      <material name="Light_Grey"/>
+    </collision>
+  </link>
+<!--///////////////////////////////////// RIGHT ARM ////////////////////////////////  -->
+  <!-- joint between body and link_1_r -->
+  <joint name="yumi_joint_1_r" type="revolute">
+    <parent link="yumi_body"/>
+    <child link="yumi_link_1_r"/>
+    <origin rpy="-0.9795   -0.5682   -2.8155" xyz="0.05355 -0.0725 0.41492"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="300" lower="-2.94087978961" upper="2.94087978961" velocity="3.14159265359"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="yumi_link_1_r">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 -0.03 0.12"/>
+      <mass value="2"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://meshes/link_1.stl"/>
+      </geometry>
+      <material name="Grey"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://meshes/coarse/link_1.stl"/>
+      </geometry>
+      <material name="Grey"/>
+    </collision>
+  </link>
+  <!-- joint between link_1_r and link_2_r -->
+  <joint name="yumi_joint_2_r" type="revolute">
+    <parent link="yumi_link_1_r"/>
+    <child link="yumi_link_2_r"/>
+    <origin rpy="1.57079632679 0.0 0.0" xyz="0.03 0.0 0.1"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="300" lower="-2.50454747661" upper="0.759218224618" velocity="3.14159265359"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="yumi_link_2_r">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="2"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://meshes/link_2.stl"/>
+      </geometry>
+      <material name="Grey"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://meshes/coarse/link_2.stl"/>
+      </geometry>
+      <material name="Grey"/>
+    </collision>
+  </link>
+  <!-- joint between link_2_r and link_3_r -->
+  <joint name="yumi_joint_7_r" type="revolute">
+    <parent link="yumi_link_2_r"/>
+    <child link="yumi_link_3_r"/>
+    <origin rpy="-1.57079632679 0.0 0.0" xyz="-0.03 0.17283 0.0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="300" lower="-2.94087978961" upper="2.94087978961" velocity="3.14159265359"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="yumi_link_3_r">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="2"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://meshes/link_3.stl"/>
+      </geometry>
+      <material name="Grey"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://meshes/coarse/link_3.stl"/>
+      </geometry>
+      <material name="Grey"/>
+    </collision>
+  </link>
+  <!-- joint between link_3_r and link_4_r -->
+  <joint name="yumi_joint_3_r" type="revolute">
+    <parent link="yumi_link_3_r"/>
+    <child link="yumi_link_4_r"/>
+    <origin rpy="1.57079632679 -1.57079632679 0.0" xyz="-0.04188 0.0 0.07873"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="300" lower="-2.15548162621" upper="1.3962634016" velocity="3.14159265359"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="yumi_link_4_r">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="2"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://meshes/link_4.stl"/>
+      </geometry>
+      <material name="Grey"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://meshes/coarse/link_4.stl"/>
+      </geometry>
+      <material name="Grey"/>
+    </collision>
+  </link>
+  <!-- joint between link_4_r and link_5_r -->
+  <joint name="yumi_joint_4_r" type="revolute">
+    <parent link="yumi_link_4_r"/>
+    <child link="yumi_link_5_r"/>
+    <origin rpy="-1.57079632679 0.0 0.0" xyz="0.0405 0.16461 0.0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="300" lower="-5.06145483078" upper="5.06145483078" velocity="6.98131700798"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="yumi_link_5_r">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="2"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://meshes/link_5.stl"/>
+      </geometry>
+      <material name="Grey"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://meshes/coarse/link_5.stl"/>
+      </geometry>
+      <material name="Grey"/>
+    </collision>
+  </link>
+  <!-- joint between link_5_r and link_6_r -->
+  <joint name="yumi_joint_5_r" type="revolute">
+    <parent link="yumi_link_5_r"/>
+    <child link="yumi_link_6_r"/>
+    <origin rpy="1.57079632679 0.0 0.0" xyz="-0.027 0 0.10039"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="300" lower="-1.53588974176" upper="2.40855436775" velocity="6.98131700798"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="yumi_link_6_r">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="2"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://meshes/link_6.stl"/>
+      </geometry>
+      <material name="Grey"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://meshes/coarse/link_6.stl"/>
+      </geometry>
+      <material name="Grey"/>
+    </collision>
+  </link>
+  <!-- joint between link_6_r and link_7_r -->
+  <joint name="yumi_joint_6_r" type="revolute">
+    <parent link="yumi_link_6_r"/>
+    <child link="yumi_link_7_r"/>
+    <origin rpy="-1.57079632679 0 0.0" xyz="0.027 0.029 0.0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="300" lower="-3.99680398707" upper="3.99680398707" velocity="6.98131700798"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="yumi_link_7_r">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="2"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://meshes/link_7.stl"/>
+      </geometry>
+      <material name="Grey"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://meshes/coarse/link_7.stl"/>
+      </geometry>
+      <material name="Grey"/>
+    </collision>
+  </link>
+
+<!--///////////////////////////////////// LEFT ARM ////////////////////////////////  -->
+  <!-- joint between body and link_1_l -->
+  <joint name="yumi_joint_1_l" type="revolute">
+    <parent link="yumi_body"/>
+    <child link="yumi_link_1_l"/>
+    <origin rpy="0.9781 -0.5716 2.8180" xyz="0.05355 0.07250 0.41492"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="300" lower="-2.94087978961" upper="2.94087978961" velocity="3.14159265359"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="yumi_link_1_l">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 -0.03 0.12"/>
+      <mass value="2"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://meshes/link_1.stl"/>
+      </geometry>
+      <material name="Grey"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://meshes/coarse/link_1.stl"/>
+      </geometry>
+      <material name="Grey"/>
+    </collision>
+  </link>
+  
+  <!-- joint between link_1_l and link_2_l -->
+  <joint name="yumi_joint_2_l" type="revolute">
+    <parent link="yumi_link_1_l"/>
+    <child link="yumi_link_2_l"/>
+    <origin rpy="1.57079632679 0.0 0.0" xyz="0.03 0.0 0.1"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="300" lower="-2.50454747661" upper="0.759218224618" velocity="3.14159265359"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="yumi_link_2_l">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="2"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://meshes/link_2.stl"/>
+      </geometry>
+      <material name="Grey"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://meshes/coarse/link_2.stl"/>
+      </geometry>
+      <material name="Grey"/>
+    </collision>
+  </link>
+
+  <!-- joint between link_2_l and link_3_l -->
+  <joint name="yumi_joint_7_l" type="revolute">
+    <parent link="yumi_link_2_l"/>
+    <child link="yumi_link_3_l"/>
+    <origin rpy="-1.57079632679 0.0 0.0" xyz="-0.03 0.17283 0.0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="300" lower="-2.94087978961" upper="2.94087978961" velocity="3.14159265359"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="yumi_link_3_l">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="2"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://meshes/link_3.stl"/>
+      </geometry>
+      <material name="Grey"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://meshes/coarse/link_3.stl"/>
+      </geometry>
+      <material name="Grey"/>
+    </collision>
+  </link>
+
+  <!-- joint between link_3_l and link_4_l -->
+  <joint name="yumi_joint_3_l" type="revolute">
+    <parent link="yumi_link_3_l"/>
+    <child link="yumi_link_4_l"/>
+    <origin rpy="1.57079632679 -1.57079632679 0.0" xyz="-0.04188 0.0 0.07873"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="300" lower="-2.15548162621" upper="1.3962634016" velocity="3.14159265359"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="yumi_link_4_l">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="2"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://meshes/link_4.stl"/>
+      </geometry>
+      <material name="Grey"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://meshes/coarse/link_4.stl"/>
+      </geometry>
+      <material name="Grey"/>
+    </collision>
+  </link>
+
+  <!-- joint between link_4_l and link_5_l -->
+  <joint name="yumi_joint_4_l" type="revolute">
+    <parent link="yumi_link_4_l"/>
+    <child link="yumi_link_5_l"/>
+    <origin rpy="-1.57079632679 0.0 0.0" xyz="0.0405 0.16461 0.0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="300" lower="-5.06145483078" upper="5.06145483078" velocity="6.98131700798"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="yumi_link_5_l">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="2"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://meshes/link_5.stl"/>
+      </geometry>
+      <material name="Grey"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://meshes/coarse/link_5.stl"/>
+      </geometry>
+      <material name="Grey"/>
+    </collision>
+  </link>
+
+  <!-- joint between link_5_l and link_6_l -->
+  <joint name="yumi_joint_5_l" type="revolute">
+    <parent link="yumi_link_5_l"/>
+    <child link="yumi_link_6_l"/>
+    <origin rpy="1.57079632679 0.0 0.0" xyz="-0.027 0 0.10039"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="300" lower="-1.53588974176" upper="2.40855436775" velocity="6.98131700798"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="yumi_link_6_l">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="2"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://meshes/link_6.stl"/>
+      </geometry>
+      <material name="Grey"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://meshes/coarse/link_6.stl"/>
+      </geometry>
+      <material name="Grey"/>
+    </collision>
+  </link>
+
+  <!-- joint between link_6_l and link_7_l -->
+  <joint name="yumi_joint_6_l" type="revolute">
+    <parent link="yumi_link_6_l"/>
+    <child link="yumi_link_7_l"/>
+    <origin rpy="-1.57079632679 0 0.0" xyz="0.027 0.029 0.0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="300" lower="-3.99680398707" upper="3.99680398707" velocity="6.98131700798"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="yumi_link_7_l">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="2"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://meshes/link_7.stl"/>
+      </geometry>
+      <material name="Grey"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://meshes/coarse/link_7.stl"/>
+      </geometry>
+      <material name="Grey"/>
+    </collision>
+  </link>
+  <link name="world"/>
+  <joint name="world_joint" type="fixed">
+    <parent link="world"/>
+    <child link="yumi_base_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0.1"/>
+  </joint>
+
+<!-- GRIPPER PARTS BELOW -->
+
+<!-- LEFT HAND part-->
+  <joint name="yumi_link_7_l_joint" type="fixed">
+    <parent link="yumi_link_7_l" />
+    <child link="left_hand_base" />
+    <origin rpy="0 0 1.57" xyz="0 0 0"/>
+  </joint>
+  <!-- BASE LINKS -->
+    <link name="left_hand_base">
+      <visual>
+        <origin xyz="0 0 -0.032" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/base10.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 -0.032" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/base10.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Ld">
+      <!-- <visual> -->
+      <!--      <geometry> -->
+      <!--        <cylinder length="0.110" radius="${cyl_radius}" /> -->
+      <!--      </geometry> -->
+      <!--      <material name="${name}_green" /> -->
+      <!-- </visual> -->
+    </link>
+
+    <link name="Lh">
+      <!-- <visual> -->
+      <!--      <origin rpy="0 1.571 0" xyz="${side*(-0.0125)} 0 0.0825" /> -->
+      <!--      <geometry> -->
+      <!--        <cylinder length="0.025" radius="${cyl_radius}" /> -->
+      <!--      </geometry> -->
+      <!--      <material name="${name}_green" /> -->
+      <!-- </visual> -->
+    </link>
+
+    <link name="Ld2">
+      <!-- <visual> -->
+      <!--      <origin rpy="0 0 0" xyz="${side*(-0.025)} 0 0.09625" /> -->
+      <!--      <geometry> -->
+      <!--        <cylinder length="0.0275" radius="${cyl_radius}" /> -->
+      <!--      </geometry> -->
+      <!--      <material name="${name}_green" /> -->
+      <!-- </visual> -->
+    </link>
+
+    <link name="Le">
+    </link>
+
+    <link name="Le1">
+      <visual>
+        <origin rpy="0 0 0" xyz="0 0.01313 0" />
+        <geometry>
+          <mesh scale="-1 1 1" filename="package://meshes/schunk_left/h10.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0 0.01313 0" />
+        <geometry>
+          <mesh scale="-1 1 1" filename="package://meshes/schunk_left/h10.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Le2">
+      <visual>
+        <origin xyz="0.0007 0 -0.01002" />
+        <geometry>
+          <mesh scale="-1 1 1" filename="package://meshes/schunk_left/h11.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.0007 0 -0.01002" />
+        <geometry>
+          <mesh scale="-1 1 1" filename="package://meshes/schunk_left/h11.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- LENGTH NOT FOUND IN DATASHEET! GUESSED!!! -->
+    <link name="Le3">
+      <!-- <visual> -->
+      <!--      <origin rpy="0 0 0" xyz="${side*(0.0175)} 0 0.015" /> -->
+      <!--      <geometry> -->
+      <!--        <cylinder length="0.03" radius="${cyl_radius}" /> -->
+      <!--      </geometry> -->
+      <!--      <material name="green" /> -->
+      <!-- </visual> -->
+    </link>
+
+    <!-- LENGTH NOT FOUND IN DATASHEET! GUESSED, BUT POSITION CALCULATED: E4 = D-G-F!!! -->
+    <link name="Le4">
+      <!-- <visual> -->
+      <!--      <origin rpy="0 0 0" xyz="${side*(0.02825)} 0 0.043" /> -->
+      <!--      <geometry> -->
+      <!--        <cylinder length="0.026" radius="${cyl_radius}" /> -->
+      <!--      </geometry> -->
+      <!--      <material name="green" /> -->
+      <!-- </visual> -->
+    </link>
+
+    <!-- LENGTH NOT FOUND IN DATASHEET! GUESSED, BUT POSITION CALCULATED: E5 = D-G!!! -->
+    <link name="Le5">
+      <!-- <visual> -->
+      <!--      <origin rpy="0 0 0" xyz="${side*(0.00675)} 0 0.04775" /> -->
+      <!--      <geometry> -->
+      <!--        <cylinder length="0.0355" radius="${cyl_radius}" /> -->
+      <!--      </geometry> -->
+      <!--      <material name="green" /> -->
+      <!-- </visual> -->
+    </link>
+
+  <!-- THUMB LINKS -->
+    <link name="Lthumb_1">
+      <visual>
+        <origin xyz="0 0 0.02442" />
+        <geometry>
+          <mesh scale="1 -1 1" filename="package://meshes/schunk_left/d10.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0.02442" />
+        <geometry>
+          <mesh scale="1 -1 1" filename="package://meshes/schunk_left/d10.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Lthumb_virtual_2">
+    </link>
+
+    <link name="Lthumb_3">
+      <visual>
+        <geometry>
+          <mesh scale="1 -1 -1" filename="package://meshes/schunk_left/d11.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh scale="1 -1 -1" filename="package://meshes/schunk_left/d11.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Lthumb_4">
+      <visual>
+        <geometry>
+          <mesh scale="1 -1 -1" filename="package://meshes/schunk_left/d12.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh scale="1 -1 -1" filename="package://meshes/schunk_left/d12.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Lthumb_5">
+      <visual>
+        <geometry>
+          <mesh scale="1 -1 -1" filename="package://meshes/schunk_left/d13.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh scale="1 -1 -1" filename="package://meshes/schunk_left/d13.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+
+  <!-- INDEX FINGER LINKS -->
+    <link name="Lvirtual_index_1">
+      <visual>
+        <origin xyz="0 0 0.01321" />
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f10.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0.01321" />
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f10.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Lindex_2">
+      <visual>
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f11.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f11.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Lindex_3">
+      <visual>
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f12.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f12.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Lindex_4">
+      <visual>
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f13.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f13.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+  <!-- MIDDLE FINGER LINKS -->
+    <link name="Lvirtual_middle_1">
+      <visual>
+        <origin xyz="0 0 0.01321" />
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f20.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0.01321" />
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f20.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Lmiddle_2">
+      <visual>
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f21.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f21.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Lmiddle_3">
+      <visual>
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f22.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f22.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Lmiddle_4">
+      <visual>
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f23.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f23.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+
+    <!-- RING FINGER LINKS -->
+    <link name="virtual_ring_1">
+      <visual>
+        <origin xyz="0 0 -0.01321" />
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f30.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 -0.01321" />
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f30.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="ring_2">
+      <visual>
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f31.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f31.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="ring_3">
+      <visual>
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f32.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f32.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="ring_4">
+      <visual>
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f33.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f33.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+  <!-- PINKY FINGER LINKS -->
+    <link name="Lvirtual_pinky_1">
+      <visual>
+        <origin xyz="0 0 -0.01321" />
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f40.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 -0.01321" />
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f40.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Lpinky_2">
+      <visual>
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f41.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f41.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Lpinky_3">
+      <visual>
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f42.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f42.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Lpinky_4">
+      <visual>
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f43.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://meshes/schunk_left/f43.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+
+  
+  <!-- BASE_LINE JOINTS -->
+    <!-- JOINT NOT FOR BASE_LINE. BUT WRITTEN DOWN HERE FOR BETTER UX -->
+    <joint name="Lf1" type="fixed">
+      <parent link="Le1" />
+      <child link="Ld" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
+    <joint name="Lf2" type="fixed">
+      <parent link="Ld" />
+      <child link="Lh" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
+
+    <joint name="Lf3" type="fixed">
+      <parent link="Lh" />
+      <child link="Ld2" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
+    <joint name="Lf4" type="fixed">
+      <parent link="left_hand_base" />
+      <child link="Le1" />
+      <origin xyz="0 -0.01313 0" rpy="0 0 0" />
+    </joint>
+
+
+    <joint name="Lf5" type="fixed">
+      <parent link="Le2" />
+      <child link="Le3" />
+      <origin xyz="0 -0.0060 0" rpy="0 0 0" />
+    </joint>
+
+    <joint name="Lf6" type="fixed">
+      <parent link="Le3" />
+      <child link="Le" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
+    <joint name="Lf7" type="fixed">
+      <parent link="Le" />
+      <child link="Le4" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
+    <joint name="Lf8" type="fixed">
+      <parent link="Le" />
+      <child link="Le5" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
+  <!-- HAND JOINTS -->
+    <joint name="LPart_Hand" type="revolute">
+      <parent link="Le1" />
+      <child link="Le2" />
+      <limit effort="1000.0" lower="0.0" upper="0.98786" velocity="1" />
+      <origin xyz="-0.01840 0.006 0.0375" rpy="0 0 0" />
+      <axis xyz="0 0 -1" />
+      <mimic joint="LThumb_Opposition" multiplier="1" offset="0" />
+    </joint>
+
+  <!-- THUMB JOINTS -->
+    <joint name="LThumb_Opposition" type="revolute">
+      <parent link="Le1" />
+      <child link="Lthumb_1" />
+      <limit effort="1000.0" lower="0.0" upper="0.9879" velocity="1" />
+      <origin xyz="0.01690 0.02626 0" rpy="0 0.2618 1.571" />
+      <axis xyz="0 0 1" />
+    </joint>
+
+    <joint name="LThumb_Helper" type="fixed">
+      <parent link="Lthumb_1" />
+      <child link="Lthumb_virtual_2" />
+      <origin xyz="0 0 0.04596" rpy="0 -1.5707 3.1416" />
+    </joint>
+
+    <joint name="LThumb_Flexion" type="revolute">
+      <parent link="Lthumb_virtual_2" />
+      <child link="Lthumb_3" />
+      <limit effort="1000.0" lower="0.0" upper="0.9704" velocity="1" />
+      <origin xyz="0 0 0" rpy="0 0 0.9704" />
+      <axis xyz="0 0 -1" />
+    </joint>
+
+    <joint name="LThumb_3" type="revolute">
+      <parent link="Lthumb_3" />
+      <child link="Lthumb_4" />
+      <limit effort="1000.0" lower="0.0" upper="0.98506" velocity="1" />
+      <origin xyz="0.0485 0 0" rpy="0 0 0" />
+      <axis xyz="0 0 -1" />
+      <mimic joint="LThumb_Flexion" multiplier="1.01511" offset="0" />
+    </joint>
+
+    <joint name="LThumb_4" type="revolute">
+      <parent link="Lthumb_4" />
+      <child link="Lthumb_5" />
+      <limit effort="1000.0" lower="0.0" upper="1.406" velocity="1" />
+      <origin xyz="0.030 0 0" rpy="0 0 0" />
+      <axis xyz="0 0 -1" />
+      <mimic joint="LThumb_Flexion" multiplier="1.44889" offset="0" />
+    </joint>
+
+  <!-- INDEX FINGER JOINTS -->
+    <joint name="LIndex_Spread" type="revolute">
+      <parent link="Ld2" />
+      <child link="Lvirtual_index_1" />
+      <limit effort="1000.0" lower="0.0" upper="0.28833" velocity="1" />
+      <origin xyz="0.025 0 0.110" rpy="0 -1.5707 1.5707" />
+      <axis xyz="0 0 -1" />
+      <mimic joint="LPinky_Spread" multiplier="0.5" offset="0" />
+    </joint>
+
+    <joint name="LIndex_Proximal" type="revolute">
+      <parent link="Lvirtual_index_1" />
+      <child link="Lindex_2" />
+      <limit effort="1000.0" lower="0.0" upper="0.79849" velocity="1" />
+      <origin xyz="0 0 0" rpy="-1.5707 0 0" />
+      <axis xyz="0 0 1" />
+    </joint>
+
+    <joint name="LIndex_3" type="revolute">
+      <parent link="Lindex_2" />
+      <child link="Lindex_3" />
+      <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
+      <origin xyz="0.04804 0 0" rpy="0 0 0" />
+      <axis xyz="0 0 1" />
+    </joint>
+
+    <joint name="LIndex_4" type="revolute">
+      <parent link="Lindex_3" />
+      <child link="Lindex_4" />
+      <limit effort="1000.0" lower="0" upper="1.394" velocity="1" />
+      <origin xyz="0.026 0 0" rpy="0 0 0" />
+      <axis xyz="0 0 1" />
+      <mimic joint="LIndex_3" multiplier="1.0450" offset="0" />
+    </joint>
+
+  <!-- MIDDLE FINGER JOINTS -->
+    <joint name="LMiddle_Spread_Dummy" type="fixed">
+      <parent link="Ld" />
+      <child link="Lvirtual_middle_1" />
+      <origin xyz="0 0 0.110" rpy="0 -1.5707 1.5707" />
+    </joint>
+
+    <joint name="LMiddle_Proximal" type="revolute">
+      <parent link="Lvirtual_middle_1" />
+      <child link="Lmiddle_2" />
+      <limit effort="1000.0" lower="0.0" upper="0.79849" velocity="1" />
+      <origin xyz="0 0 0" rpy="-1.5707 0 0" />
+      <axis xyz="0 0 1" />
+    </joint>
+
+    <joint name="LMiddle_3" type="revolute">
+      <parent link="Lmiddle_2" />
+      <child link="Lmiddle_3" />
+      <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
+      <origin xyz="0.05004 0 0" rpy="0 0 0" />
+      <axis xyz="0 0 1" />
+    </joint>
+
+    <joint name="LMiddle_4" type="revolute">
+      <parent link="Lmiddle_3" />
+      <child link="Lmiddle_4" />
+      <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
+      <origin xyz="0.032 0 0" rpy="0 0 0" />
+      <axis xyz="0 0 1" />
+      <mimic joint="LMiddle_3" multiplier="1.0454" offset="0" />
+    </joint>
+
+
+  <!-- RING FINGER JOINTS -->
+    <joint name="LRing_Spread" type="revolute">
+      <parent link="Le5" />
+      <child link="virtual_ring_1" />
+      <limit effort="1000.0" lower="0.0" upper="0.28833" velocity="1" />
+      <origin xyz="-0.003855 0 0.0655" rpy="-1.5707 -1.5707 0" />
+      <axis xyz="0 0 -1" />
+      <mimic joint="LPinky_Spread" multiplier="0.5" offset="0" />
+    </joint>
+
+    <joint name="LRing_Proximal" type="revolute">
+      <parent link="virtual_ring_1" />
+      <child link="ring_2" />
+      <limit effort="1000.0" lower="0.0" upper="0.98175" velocity="1" />
+      <origin xyz="0 0 0" rpy="1.5707 0 0" />
+      <axis xyz="0 0 1" />
+    </joint>
+
+    <joint name="LRing_3" type="revolute">
+      <parent link="ring_2" />
+      <child link="ring_3" />
+      <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
+      <origin xyz="0.05004 0 0" rpy="0 0 0" />
+      <axis xyz="0 0 1" />
+      <mimic joint="LRing_Proximal" multiplier="1.3588" offset="0" />
+    </joint>
+
+    <joint name="LRing_4" type="revolute">
+      <parent link="ring_3" />
+      <child link="ring_4" />
+      <limit effort="1000.0" lower="0" upper="1.395" velocity="1" />
+      <origin xyz="0.032 0 0" rpy="0 0 0" />
+      <axis xyz="0 0 1" />
+      <mimic joint="LRing_Proximal" multiplier="1.42093" offset="0" />
+    </joint>
+
+
+  <!-- PINKY JOINTS -->
+    <joint name="LPinky_Spread" type="revolute">
+      <parent link="Le4" />
+      <child link="Lvirtual_pinky_1" />
+      <limit effort="1000.0" lower="0.0" upper="0.5829" velocity="1" />
+      <origin xyz="-0.025355 0 0.056" rpy="-1.5707 -1.5707 0" />
+      <axis xyz="0 0 -1" />
+    </joint>
+
+    <joint name="LPinky_Proximal" type="revolute">
+      <parent link="Lvirtual_pinky_1" />
+      <child link="Lpinky_2" />
+      <limit effort="1000.0" lower="0.0" upper="0.98175" velocity="1" />
+      <origin xyz="0 0 0" rpy="1.5707 0 0" />
+      <axis xyz="0 0 1" />
+    </joint>
+
+    <joint name="LPinky_3" type="revolute">
+      <parent link="Lpinky_2" />
+      <child link="Lpinky_3" />
+      <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
+      <origin xyz="0.04454 0 0" rpy="0 0 0" />
+      <axis xyz="0 0 1" />
+      <mimic joint="LPinky_Proximal" multiplier="1.35880" offset="0" />
+    </joint>
+
+    <joint name="LPinky_4" type="revolute">
+      <parent link="Lpinky_3" />
+      <child link="Lpinky_4" />
+      <limit effort="1000.0" lower="0" upper="1.3971" velocity="1" />
+      <origin xyz="0.022 0 0" rpy="0 0 0" />
+      <axis xyz="0 0 1" />
+      <mimic joint="LPinky_Proximal" multiplier="1.42307" offset="0" />
+    </joint>
+<!-- above is the part of LEFT HAND --> 
+
+<!-- RIGHT HAND part-->
+  <joint name="yumi_link_7_r_joint" type="fixed">
+      <parent link="yumi_link_7_r" />
+      <child link="right_hand_base" />
+      <origin rpy="0 0 1.57" xyz="0 0 0"/>
+  </joint>
+  <!-- BASE LINKS -->
+    <link name="right_hand_base">
+      <visual>
+        <origin xyz="0 0 -0.032" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/base10.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 -0.032" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/base10.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Rd">
+      <!-- <visual> -->
+      <!--      <geometry> -->
+      <!--        <cylinder length="0.110" radius="${cyl_radius}" /> -->
+      <!--      </geometry> -->
+      <!--      <material name="${name}_green" /> -->
+      <!-- </visual> -->
+    </link>
+
+    <link name="Rh">
+      <!-- <visual> -->
+      <!--      <origin rpy="0 1.571 0" xyz="${side*(-0.0125)} 0 0.0825" /> -->
+      <!--      <geometry> -->
+      <!--        <cylinder length="0.025" radius="${cyl_radius}" /> -->
+      <!--      </geometry> -->
+      <!--      <material name="${name}_green" /> -->
+      <!-- </visual> -->
+    </link>
+
+    <link name="Rd2">
+      <!-- <visual> -->
+      <!--      <origin rpy="0 0 0" xyz="${side*(-0.025)} 0 0.09625" /> -->
+      <!--      <geometry> -->
+      <!--        <cylinder length="0.0275" radius="${cyl_radius}" /> -->
+      <!--      </geometry> -->
+      <!--      <material name="${name}_green" /> -->
+      <!-- </visual> -->
+    </link>
+
+    <link name="Re1">
+      <visual>
+        <origin rpy="0 0 0" xyz="0 0.01313 0" />
+        <geometry>
+          <mesh scale="1 1 1" filename="package://meshes/schunk_right/h10.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0 0.01313 0" />
+        <geometry>
+          <mesh scale="1 1 1" filename="package://meshes/schunk_right/h10.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Re2">
+      <visual>
+        <origin xyz="-0.0007 0 -0.01002" />
+        <geometry>
+          <mesh scale="1 1 1" filename="package://meshes/schunk_right/h11.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="-0.0007 0 -0.01002" />
+        <geometry>
+          <mesh scale="1 1 1" filename="package://meshes/schunk_right/h11.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- LENGTH NOT FOUND IN DATASHEET! GUESSED!!! -->
+    <link name="Re3">
+      <!-- <visual> -->
+      <!--      <origin rpy="0 0 0" xyz="${side*(0.0175)} 0 0.015" /> -->
+      <!--      <geometry> -->
+      <!--        <cylinder length="0.03" radius="${cyl_radius}" /> -->
+      <!--      </geometry> -->
+      <!--      <material name="green" /> -->
+      <!-- </visual> -->
+    </link>
+
+    <link name="Re">
+    </link>
+
+    <!-- LENGTH NOT FOUND IN DATASHEET! GUESSED, BUT POSITION CALCULATED: E4 = D-G-F!!! -->
+    <link name="Re4">
+      <!-- <visual> -->
+      <!--      <origin rpy="0 0 0" xyz="${side*(0.02825)} 0 0.043" /> -->
+      <!--      <geometry> -->
+      <!--        <cylinder length="0.026" radius="${cyl_radius}" /> -->
+      <!--      </geometry> -->
+      <!--      <material name="green" /> -->
+      <!-- </visual> -->
+    </link>
+
+    <!-- LENGTH NOT FOUND IN DATASHEET! GUESSED, BUT POSITION CALCULATED: E5 = D-G!!! -->
+    <link name="Re5">
+      <!-- <visual> -->
+      <!--      <origin rpy="0 0 0" xyz="${side*(0.00675)} 0 0.04775" /> -->
+      <!--      <geometry> -->
+      <!--        <cylinder length="0.0355" radius="${cyl_radius}" /> -->
+      <!--      </geometry> -->
+      <!--      <material name="green" /> -->
+      <!-- </visual> -->
+    </link>
+
+
+  <!-- THUMB LINKS -->
+    <link name="Rthumb_1">
+      <visual>
+        <origin xyz="0 0 0.02442" />
+        <geometry>
+          <mesh scale="1 1 1" filename="package://meshes/schunk_right/d10.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0.02442" />
+        <geometry>
+          <mesh scale="1 1 1" filename="package://meshes/schunk_right/d10.dae" />
+        </geometry>
+      </collision>
+    </link>
+    <link name="Rthumb_virtual_2">
+    </link>
+    <link name="Rthumb_3">
+      <visual>
+        <geometry>
+          <mesh scale="1 1 1" filename="package://meshes/schunk_right/d11.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh scale="1 1 1" filename="package://meshes/schunk_right/d11.dae" />
+        </geometry>
+      </collision>
+    </link>
+    <link name="Rthumb_4">
+      <visual>
+        <geometry>
+          <mesh scale="1 1 1" filename="package://meshes/schunk_right/d12.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh scale="1 1 1" filename="package://meshes/schunk_right/d12.dae" />
+        </geometry>
+      </collision>
+    </link>
+    <link name="Rthumb_5">
+      <visual>
+        <geometry>
+          <mesh scale="1 1 1" filename="package://meshes/schunk_right/d13.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh scale="1 1 1" filename="package://meshes/schunk_right/d13.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+
+  <!-- INDEX FINGER LINKS -->
+    <link name="Rvirtual_index_1">
+      <visual>
+        <origin xyz="0 0 0.01321" />
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f10.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0.01321" />
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f10.dae" />
+        </geometry>
+      </collision>
+    </link>
+    <link name="Rindex_2">
+      <visual>
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f11.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f11.dae" />
+        </geometry>
+      </collision>
+    </link>
+    <link name="Rindex_3">
+      <visual>
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f12.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f12.dae" />
+        </geometry>
+      </collision>
+    </link>
+    <link name="Rindex_4">
+      <visual>
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f13.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f13.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+  <!-- MIDDLE FINGER LINKS -->
+    <link name="Rvirtual_middle_1">
+      <visual>
+        <origin xyz="0 0 0.01321" />
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f20.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0.01321" />
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f20.dae" />
+        </geometry>
+      </collision>
+    </link>
+    <link name="Rmiddle_2">
+      <visual>
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f21.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f21.dae" />
+        </geometry>
+      </collision>
+    </link>
+    <link name="Rmiddle_3">
+      <visual>
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f22.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f22.dae" />
+        </geometry>
+      </collision>
+    </link>
+    <link name="Rmiddle_4">
+      <visual>
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f23.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f23.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+
+  <!-- RING FINGER LINKS -->
+    <link name="Rvirtual_ring_1">
+      <visual>
+        <origin xyz="0 0 -0.01321" />
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f30.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 -0.01321" />
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f30.dae" />
+        </geometry>
+      </collision>
+    </link>
+    <link name="Rring_2">
+      <visual>
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f31.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f31.dae" />
+        </geometry>
+      </collision>
+    </link>
+    <link name="Rring_3">
+      <visual>
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f32.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f32.dae" />
+        </geometry>
+      </collision>
+    </link>
+    <link name="Rring_4">
+      <visual>
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f33.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f33.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+  <!-- PINKY FINGER LINKS -->
+    <link name="Rvirtual_pinky_1">
+      <visual>
+        <origin xyz="0 0 -0.01321" />
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f40.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 -0.01321" />
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f40.dae" />
+        </geometry>
+      </collision>
+    </link>
+    <link name="Rpinky_2">
+      <visual>
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f41.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f41.dae" />
+        </geometry>
+      </collision>
+    </link>
+    <link name="Rpinky_3">
+      <visual>
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f42.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f42.dae" />
+        </geometry>
+      </collision>
+    </link>
+    <link name="Rpinky_4">
+      <visual>
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f43.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://meshes/schunk_right/f43.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+  <!-- BASE_LINE JOINTS -->
+    <!-- JOINT NOT FOR BASE_LINE. BUT WRITTEN DOWN HERE FOR BETTER UX -->
+    <joint name="Rf1" type="fixed">
+      <parent link="Re1" />
+      <child link="Rd" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
+    <joint name="Rf2" type="fixed">
+      <parent link="Rd" />
+      <child link="Rh" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
+
+    <joint name="Rf3" type="fixed">
+      <parent link="Rh" />
+      <child link="Rd2" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
+    <joint name="Rf4" type="fixed">
+      <parent link="right_hand_base" />
+      <child link="Re1" />
+      <origin xyz="0 -0.01313 0" rpy="0 0 0" />
+    </joint>
+
+    <joint name="Rf5" type="fixed">
+      <parent link="Re2" />
+      <child link="Re3" />
+      <origin xyz="0 -0.0060 0" rpy="0 0 0" />
+    </joint>
+
+    <joint name="Rf6" type="fixed">
+      <parent link="Re3" />
+      <child link="Re" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
+    <joint name="Rf7" type="fixed">
+      <parent link="Re" />
+      <child link="Re4" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
+    <joint name="Rf8" type="fixed">
+      <parent link="Re" />
+      <child link="Re5" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
+
+  <!-- HAND JOINT -->
+    <joint name="RPart_Hand" type="revolute">
+      <parent link="Re1" />
+      <child link="Re2" />
+      <limit effort="1000.0" lower="0.0" upper="0.98786" velocity="1" />
+      <origin xyz="0.01840 0.006 0.0375" rpy="0 0 0" />
+      <axis xyz="0 0 1" />
+      <mimic joint="RThumb_Opposition" multiplier="1" offset="0" />
+    </joint>
+
+
+  <!-- THUMB JOINTS -->
+    <joint name="RThumb_Opposition" type="revolute">
+      <parent link="Re1" />
+      <child link="Rthumb_1" />
+      <limit effort="1000.0" lower="0.0" upper="0.9879" velocity="1" />
+      <origin xyz="-0.01690 0.02626 0" rpy="0 0.2618 1.571" />
+      <axis xyz="0 0 -1" />
+    </joint>
+
+    <joint name="RThumb_Helper" type="fixed">
+      <parent link="Rthumb_1" />
+      <child link="Rthumb_virtual_2" />
+      <origin xyz="0 0 0.04596" rpy="0 -1.5707 3.1416" />
+    </joint>
+    
+    <joint name="RThumb_Flexion" type="revolute">
+      <parent link="Rthumb_virtual_2" />
+      <child link="Rthumb_3" />
+      <limit effort="1000.0" lower="0.0" upper="0.9704" velocity="1" />
+      <origin xyz="0 0 0" rpy="0 0 -0.9704" />
+      <axis xyz="0 0 1" />
+    </joint>
+
+    <joint name="RThumb_3" type="revolute">
+      <parent link="Rthumb_3" />
+      <child link="Rthumb_4" />
+      <limit effort="1000.0" lower="0.0" upper="0.98506" velocity="1" />
+      <origin xyz="0.0485 0 0" rpy="0 0 0" />
+      <axis xyz="0 0 1" />
+      <mimic joint="RThumb_Flexion" multiplier="1.01511" offset="0" />
+    </joint>
+
+    <joint name="RThumb_4" type="revolute">
+      <parent link="Rthumb_4" />
+      <child link="Rthumb_5" />
+      <limit effort="1000.0" lower="0.0" upper="1.406" velocity="1" />
+      <origin xyz="0.030 0 0" rpy="0 0 0" />
+      <axis xyz="0 0 1" />
+      <mimic joint="RThumb_Flexion" multiplier="1.44889" offset="0" />
+    </joint>
+
+  <!-- INDEX FINGER JOINTS -->
+    <joint name="RIndex_Spread" type="revolute">
+      <parent link="Rd2" />
+      <child link="Rvirtual_index_1" />
+      <limit effort="1000.0" lower="0.0" upper="0.28833" velocity="1" />
+      <origin xyz="-0.025 0 0.110" rpy="0 -1.5707 1.5707" />
+      <axis xyz="0 0 1" />
+      <mimic joint="RPinky_Spread" multiplier="0.5" offset="0" />
+    </joint>
+
+    <joint name="RIndex_Proximal" type="revolute">
+      <parent link="Rvirtual_index_1" />
+      <child link="Rindex_2" />
+      <limit effort="1000.0" lower="0.0" upper="0.79849" velocity="1" />
+      <origin xyz="0 0 0" rpy="-1.5707 0 0" />
+      <axis xyz="0 0 1" />
+    </joint>
+
+    <joint name="RIndex_3" type="revolute">
+      <parent link="Rindex_2" />
+      <child link="Rindex_3" />
+      <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
+      <origin xyz="0.04804 0 0" rpy="0 0 0" />
+      <axis xyz="0 0 1" />
+    </joint>
+
+    <joint name="RIndex_4" type="revolute">
+      <parent link="Rindex_3" />
+      <child link="Rindex_4" />
+      <limit effort="1000.0" lower="0" upper="1.394" velocity="1" />
+      <origin xyz="0.026 0 0" rpy="0 0 0" />
+      <axis xyz="0 0 1" />
+      <mimic joint="RIndex_3" multiplier="1.0450" offset="0" />
+    </joint>
+
+  <!-- MIDDLE FINGER JOINTS -->
+    <joint name="RMiddle_Spread_Dummy" type="fixed">
+      <parent link="Rd" />
+      <child link="Rvirtual_middle_1" />
+      <origin xyz="0 0 0.110" rpy="0 -1.5707 1.5707" />
+    </joint>
+
+    <joint name="RMiddle_Proximal" type="revolute">
+      <parent link="Rvirtual_middle_1" />
+      <child link="Rmiddle_2" />
+      <limit effort="1000.0" lower="0.0" upper="0.79849" velocity="1" />
+      <origin xyz="0 0 0" rpy="-1.5707 0 0" />
+      <axis xyz="0 0 1" />
+    </joint>
+
+    <joint name="RMiddle_3" type="revolute">
+      <parent link="Rmiddle_2" />
+      <child link="Rmiddle_3" />
+      <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
+      <origin xyz="0.05004 0 0" rpy="0 0 0" />
+      <axis xyz="0 0 1" />
+    </joint>
+
+    <joint name="RMiddle_4" type="revolute">
+      <parent link="Rmiddle_3" />
+      <child link="Rmiddle_4" />
+      <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
+      <origin xyz="0.032 0 0" rpy="0 0 0" />
+      <axis xyz="0 0 1" />
+      <mimic joint="RMiddle_3" multiplier="1.0454" offset="0" />
+    </joint>
+
+
+  <!-- RING FINGER JOINTS -->
+    <joint name="RRing_Spread" type="revolute">
+      <parent link="Re5" />
+      <child link="Rvirtual_ring_1" />
+      <limit effort="1000.0" lower="0.0" upper="0.28833" velocity="1" />
+      <origin xyz="0.003855 0 0.0655" rpy="-1.5707 -1.5707 0" />
+      <axis xyz="0 0 1" />
+      <mimic joint="RPinky_Spread" multiplier="0.5" offset="0" />
+    </joint>
+
+    <joint name="RRing_Proximal" type="revolute">
+      <parent link="Rvirtual_ring_1" />
+      <child link="Rring_2" />
+      <limit effort="1000.0" lower="0.0" upper="0.98175" velocity="1" />
+      <origin xyz="0 0 0" rpy="1.5707 0 0" />
+      <axis xyz="0 0 1" />
+    </joint>
+
+    <joint name="RRing_3" type="revolute">
+      <parent link="Rring_2" />
+      <child link="Rring_3" />
+      <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
+      <origin xyz="0.05004 0 0" rpy="0 0 0" />
+      <axis xyz="0 0 1" />
+      <mimic joint="RRing_Proximal" multiplier="1.3588" offset="0" />
+    </joint>
+
+    <joint name="RRing_4" type="revolute">
+      <parent link="Rring_3" />
+      <child link="Rring_4" />
+      <limit effort="1000.0" lower="0" upper="1.395" velocity="1" />
+      <origin xyz="0.032 0 0" rpy="0 0 0" />
+      <axis xyz="0 0 1" />
+      <mimic joint="RRing_Proximal" multiplier="1.42093" offset="0" />
+    </joint>
+
+
+  <!-- PINKY JOINTS -->
+    <joint name="RPinky_Spread" type="revolute">
+      <parent link="Re4" />
+      <child link="Rvirtual_pinky_1" />
+      <limit effort="1000.0" lower="0.0" upper="0.5829" velocity="1" />
+      <origin xyz="0.025355 0 0.056" rpy="-1.5707 -1.5707 0" />
+      <axis xyz="0 0 1" />
+    </joint>
+
+    <joint name="RPinky_Proximal" type="revolute">
+      <parent link="Rvirtual_pinky_1" />
+      <child link="Rpinky_2" />
+      <limit effort="1000.0" lower="0.0" upper="0.98175" velocity="1" />
+      <origin xyz="0 0 0" rpy="1.5707 0 0" />
+      <axis xyz="0 0 1" />
+    </joint>
+
+    <joint name="RPinky_3" type="revolute">
+      <parent link="Rpinky_2" />
+      <child link="Rpinky_3" />
+      <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
+      <origin xyz="0.04454 0 0" rpy="0 0 0" />
+      <axis xyz="0 0 1" />
+      <mimic joint="RPinky_Proximal" multiplier="1.35880" offset="0" />
+    </joint>
+
+    <joint name="RPinky_4" type="revolute">
+      <parent link="Rpinky_3" />
+      <child link="Rpinky_4" />
+      <limit effort="1000.0" lower="0" upper="1.3971" velocity="1" />
+      <origin xyz="0.022 0 0" rpy="0 0 0" />
+      <axis xyz="0 0 1" />
+      <mimic joint="RPinky_Proximal" multiplier="1.42307" offset="0" />
+    </joint>
+<!-- above is the part of RIGHT HAND -->
+</robot>

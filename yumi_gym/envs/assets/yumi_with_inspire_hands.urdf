@@ -61,7 +61,7 @@
       <material name="Light_Grey"/>
     </collision>
   </link>
-  <!--///////////////////////////////////// RIGHT ARM ////////////////////////////////  -->
+<!--///////////////////////////////////// RIGHT ARM ////////////////////////////////  -->
   <!-- joint between body and link_1_r -->
   <joint name="yumi_joint_1_r" type="revolute">
     <parent link="yumi_body"/>
@@ -272,7 +272,8 @@
       <material name="Grey"/>
     </collision>
   </link>
-  <!--///////////////////////////////////// LEFT ARM ////////////////////////////////  -->
+
+<!--///////////////////////////////////// LEFT ARM ////////////////////////////////  -->
   <!-- joint between body and link_1_l -->
   <joint name="yumi_joint_1_l" type="revolute">
     <parent link="yumi_body"/>
@@ -303,6 +304,7 @@
       <material name="Grey"/>
     </collision>
   </link>
+  
   <!-- joint between link_1_l and link_2_l -->
   <joint name="yumi_joint_2_l" type="revolute">
     <parent link="yumi_link_1_l"/>
@@ -333,6 +335,7 @@
       <material name="Grey"/>
     </collision>
   </link>
+
   <!-- joint between link_2_l and link_3_l -->
   <joint name="yumi_joint_7_l" type="revolute">
     <parent link="yumi_link_2_l"/>
@@ -363,6 +366,7 @@
       <material name="Grey"/>
     </collision>
   </link>
+
   <!-- joint between link_3_l and link_4_l -->
   <joint name="yumi_joint_3_l" type="revolute">
     <parent link="yumi_link_3_l"/>
@@ -393,6 +397,7 @@
       <material name="Grey"/>
     </collision>
   </link>
+
   <!-- joint between link_4_l and link_5_l -->
   <joint name="yumi_joint_4_l" type="revolute">
     <parent link="yumi_link_4_l"/>
@@ -423,6 +428,7 @@
       <material name="Grey"/>
     </collision>
   </link>
+
   <!-- joint between link_5_l and link_6_l -->
   <joint name="yumi_joint_5_l" type="revolute">
     <parent link="yumi_link_5_l"/>
@@ -453,6 +459,7 @@
       <material name="Grey"/>
     </collision>
   </link>
+
   <!-- joint between link_6_l and link_7_l -->
   <joint name="yumi_joint_6_l" type="revolute">
     <parent link="yumi_link_6_l"/>
@@ -490,14 +497,16 @@
     <origin rpy="0 0 0" xyz="0 0 0.1"/>
   </joint>
 
-  <!-- GRIPPER PARTS BELOW -->
+
+
+<!-- GRIPPER PARTS BELOW -->
  
 <!-- LEFT HAND part-->
-<joint name="yumi_link_7_l_joint" type="fixed">
-  <parent link="yumi_link_7_l" />
-  <child link="left_hand_base" />
-  <origin rpy="0 0 3.1415" xyz="0 0 0"/>
-</joint>
+  <joint name="yumi_link_7_l_joint" type="fixed">
+    <parent link="yumi_link_7_l" />
+    <child link="left_hand_base" />
+    <origin rpy="0 0 3.1415" xyz="0 0 0"/>
+  </joint>
 
   <!-- Create a new base frame for convenience, by LYW, 2019/11/22 -->
   <link name="left_hand_base">
@@ -518,8 +527,7 @@
   </joint>
 
 
-  <link
-    name="link111">
+  <link name="link111">
     <inertial>
       <origin
         xyz="-0.0211971496867713 -0.00980607468332059 -0.0291539210995797"
@@ -540,7 +548,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/left/link111.STL" />
+          filename="package://meshes/inspire_left/link111.STL" />
       </geometry>
       <material
         name="">
@@ -554,12 +562,11 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/left/link111.STL" />
+          filename="package://meshes/inspire_left/link111.STL" />
       </geometry>
     </collision>
   </link>
-  <link
-    name="link1">
+  <link name="link1">
     <inertial>
       <origin
         xyz="0.0107728972114067 0.00213787716764519 -1.04416311069722E-07"
@@ -580,7 +587,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/left/link1.STL" />
+          filename="package://meshes/inspire_left/link1.STL" />
       </geometry>
       <material
         name="">
@@ -594,13 +601,11 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/left/link1.STL" />
+          filename="package://meshes/inspire_left/link1.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="link1"
-    type="revolute">
+  <joint name="link1" type="revolute">
     <origin
       xyz="0.0068852 -0.0077547 -0.08206"
       rpy="-1.4604 1.2485 -1.466" />
@@ -616,8 +621,7 @@
       effort="1"
       velocity="1" />
   </joint>
-  <link
-    name="link11">
+  <link name="link11">
     <inertial>
       <origin
         xyz="0.0190179143887291 0.00563447080965412 1.42999243835096E-08"
@@ -638,7 +642,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/left/link11.STL" />
+          filename="package://meshes/inspire_left/link11.STL" />
       </geometry>
       <material
         name="">
@@ -652,13 +656,11 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/left/link11.STL" />
+          filename="package://meshes/inspire_left/link11.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="link11"
-    type="revolute">
+  <joint name="link11" type="revolute">
     <origin
       xyz="0.032132 0 0"
       rpy="-5.2101E-10 -2.8366E-11 -0.05439" />
@@ -674,8 +676,10 @@
       effort="1"
       velocity="1" />
   </joint>
-  <link
-    name="link2">
+
+
+
+  <link name="link2">
     <inertial>
       <origin
         xyz="0.0107729848426235 0.00213783905889497 -1.15186638033338E-07"
@@ -696,7 +700,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/left/link2.STL" />
+          filename="package://meshes/inspire_left/link2.STL" />
       </geometry>
       <material
         name="">
@@ -710,13 +714,11 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/left/link2.STL" />
+          filename="package://meshes/inspire_left/link2.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="link2"
-    type="revolute">
+  <joint name="link2" type="revolute">
     <origin
       xyz="-0.012436 -0.0077547 -0.082423"
       rpy="-1.5708 1.4093 -1.5708" />
@@ -732,8 +734,7 @@
       effort="1"
       velocity="1" />
   </joint>
-  <link
-    name="link22">
+  <link name="link22">
     <inertial>
       <origin
         xyz="0.0190179449257988 0.00563447974623821 1.95695375043714E-08"
@@ -754,7 +755,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/left/link22.STL" />
+          filename="package://meshes/inspire_left/link22.STL" />
       </geometry>
       <material
         name="">
@@ -768,13 +769,11 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/left/link22.STL" />
+          filename="package://meshes/inspire_left/link22.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="link22"
-    type="revolute">
+  <joint name="link22" type="revolute">
     <origin
       xyz="0.032132 0 0"
       rpy="-5.0853E-10 -1.1686E-10 -0.22588" />
@@ -790,8 +789,9 @@
       effort="1"
       velocity="1" />
   </joint>
-  <link
-    name="link3">
+
+
+  <link name="link3">
     <inertial>
       <origin
         xyz="0.0107730870011274 0.00213783984115729 -1.4434440405442E-07"
@@ -812,7 +812,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/left/link3.STL" />
+          filename="package://meshes/inspire_left/link3.STL" />
       </geometry>
       <material
         name="">
@@ -826,13 +826,11 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/left/link3.STL" />
+          filename="package://meshes/inspire_left/link3.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="link3"
-    type="revolute">
+  <joint name="link3" type="revolute">
     <origin
       xyz="-0.031665 -0.0077547 -0.08192"
       rpy="-1.9857 1.4406 -1.9826" />
@@ -848,8 +846,7 @@
       effort="1"
       velocity="1" />
   </joint>
-  <link
-    name="link33">
+  <link name="link33">
     <inertial>
       <origin
         xyz="0.0190179173374263 0.00563447812355383 2.17778843153438E-08"
@@ -870,7 +867,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/left/link33.STL" />
+          filename="package://meshes/inspire_left/link33.STL" />
       </geometry>
       <material
         name="">
@@ -884,13 +881,11 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/left/link33.STL" />
+          filename="package://meshes/inspire_left/link33.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="link33"
-    type="revolute">
+  <joint name="link33" type="revolute">
     <origin
       xyz="0.032132 0 0"
       rpy="-5.0314E-10 -1.3824E-10 -0.26815" />
@@ -906,8 +901,9 @@
       effort="1"
       velocity="1" />
   </joint>
-  <link
-    name="link4">
+
+
+  <link name="link4">
     <inertial>
       <origin
         xyz="0.0107728838996999 0.00213787812202321 -1.47685512180695E-07"
@@ -928,7 +924,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/left/link4.STL" />
+          filename="package://meshes/inspire_left/link4.STL" />
       </geometry>
       <material
         name="">
@@ -942,13 +938,11 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/left/link4.STL" />
+          filename="package://meshes/inspire_left/link4.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="link4"
-    type="revolute">
+  <joint name="link4" type="revolute">
     <origin
       xyz="-0.050841 -0.0077547 -0.08041"
       rpy="-2.0186 1.327 -2.007" />
@@ -964,8 +958,7 @@
       effort="1"
       velocity="1" />
   </joint>
-  <link
-    name="link44">
+  <link name="link44">
     <inertial>
       <origin
         xyz="0.0155924434001128 0.00555617869155978 -1.05483765444614E-07"
@@ -986,7 +979,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/left/link44.STL" />
+          filename="package://meshes/inspire_left/link44.STL" />
       </geometry>
       <material
         name="">
@@ -1000,13 +993,11 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/left/link44.STL" />
+          filename="package://meshes/inspire_left/link44.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="link44"
-    type="revolute">
+  <joint name="link44" type="revolute">
     <origin
       xyz="0.032132 0 0"
       rpy="-5.1334E-10 -9.3483E-11 -0.18013" />
@@ -1022,8 +1013,9 @@
       effort="1"
       velocity="1" />
   </joint>
-  <link
-    name="link5">
+
+
+  <link name="link5">
     <inertial>
       <origin
         xyz="-0.00433166459951286 0.000656790554769388 -0.000486675184306562"
@@ -1044,7 +1036,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/left/link5.STL" />
+          filename="package://meshes/inspire_left/link5.STL" />
       </geometry>
       <material
         name="">
@@ -1058,13 +1050,11 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/left/link5.STL" />
+          filename="package://meshes/inspire_left/link5.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="link5"
-    type="revolute">
+  <joint name="link5" type="revolute">
     <origin
       xyz="0.0010638 -0.025 -0.0059231"
       rpy="-1.5708 -2.455E-15 2.3555" />
@@ -1080,8 +1070,7 @@
       effort="1"
       velocity="1" />
   </joint>
-  <link
-    name="link51">
+  <link name="link51">
     <inertial>
       <origin
         xyz="0.0261736471642429 0.00353664240332538 -7.35522423800372E-08"
@@ -1102,7 +1091,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/left/link51.STL" />
+          filename="package://meshes/inspire_left/link51.STL" />
       </geometry>
       <material
         name="">
@@ -1116,13 +1105,11 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/left/link51.STL" />
+          filename="package://meshes/inspire_left/link51.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="link51"
-    type="revolute">
+  <joint name="link51" type="revolute">
     <origin
       xyz="-0.0115 -0.00075 0"
       rpy="-1.4988E-15 -5.5511E-17 1.8988" />
@@ -1138,8 +1125,7 @@
       effort="1"
       velocity="1" />
   </joint>
-  <link
-    name="link52">
+  <link name="link52">
     <inertial>
       <origin
         xyz="-0.00731595394729753 -0.00552216810488045 1.31327036717588E-07"
@@ -1160,7 +1146,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/left/link52.STL" />
+          filename="package://meshes/inspire_left/link52.STL" />
       </geometry>
       <material
         name="">
@@ -1174,13 +1160,11 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/left/link52.STL" />
+          filename="package://meshes/inspire_left/link52.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="link52"
-    type="revolute">
+  <joint name="link52" type="revolute">
     <origin
       xyz="0.056001 0 0"
       rpy="-1.3323E-15 -2.7756E-17 -3.0416" />
@@ -1196,8 +1180,7 @@
       effort="1"
       velocity="1" />
   </joint>
-  <link
-    name="link53">
+  <link name="link53">
     <inertial>
       <origin
         xyz="0.0104629360450728 0.00192820283562468 -3.38351464429509E-06"
@@ -1218,7 +1201,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/left/link53.STL" />
+          filename="package://meshes/inspire_left/link53.STL" />
       </geometry>
       <material
         name="">
@@ -1232,22 +1215,17 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/left/link53.STL" />
+          filename="package://meshes/inspire_left/link53.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="link53"
-    type="revolute">
+  <joint name="link53" type="revolute">
     <origin
       xyz="-0.022653 0 0"
       rpy="1.2712E-14 -9.7145E-17 2.856" />
-    <parent
-      link="link52" />
-    <child
-      link="link53" />
-    <axis
-      xyz="0 0 1" />
+    <parent link="link52" />
+    <child link="link53" />
+    <axis xyz="0 0 1" />
     <limit
       lower="-1"
       upper="0"
@@ -1258,11 +1236,11 @@
 
 
 <!-- RIGHT HAND part-->
-<joint name="yumi_link_7_r_joint" type="fixed">
-    <parent link="yumi_link_7_r" />
-    <child link="right_hand_base" />
-    <origin rpy="0 0 3.1415" xyz="0 0 0"/>
-</joint>
+  <joint name="yumi_link_7_r_joint" type="fixed">
+      <parent link="yumi_link_7_r" />
+      <child link="right_hand_base" />
+      <origin rpy="0 0 3.1415" xyz="0 0 0"/>
+  </joint>
 
   <!-- Create a new base frame for convenience, by LYW, 2019/11/18 -->
   <link name="right_hand_base">
@@ -1282,8 +1260,7 @@
     <child link="Link111" />
   </joint>
 
-  <link
-    name="Link111">
+  <link name="Link111">
     <inertial>
       <origin
         xyz="0.0284046972660885 -0.00981060404810299 0.0222000386975785"
@@ -1304,7 +1281,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/right/Link111.STL" />
+          filename="package://meshes/inspire_right/Link111.STL" />
       </geometry>
       <material
         name="">
@@ -1318,12 +1295,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/right/Link111.STL" />
+          filename="package://meshes/inspire_right/Link111.STL" />
       </geometry>
     </collision>
   </link>
-  <link
-    name="Link1">
+
+  <link name="Link1">
     <inertial>
       <origin
         xyz="0.0107729817589723 0.00213781834563882 -1.34009238303423E-07"
@@ -1344,7 +1321,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/right/Link1.STL" />
+          filename="package://meshes/inspire_right/Link1.STL" />
       </geometry>
       <material
         name="">
@@ -1358,13 +1335,11 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/right/Link1.STL" />
+          filename="package://meshes/inspire_right/Link1.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Link1"
-    type="revolute">
+  <joint name="Link1" type="revolute">
     <origin
       xyz="0.08225 -0.0077547 -0.0040172"
       rpy="5.2178E-10 -6.245E-17 -0.14966" />
@@ -1380,8 +1355,7 @@
       effort="1"
       velocity="1" />
   </joint>
-  <link
-    name="Link11">
+  <link name="Link11">
     <inertial>
       <origin
         xyz="0.019017916514892 0.00563447754295066 1.90796464460963E-08"
@@ -1402,7 +1376,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/right/Link11.STL" />
+          filename="package://meshes/inspire_right/Link11.STL" />
       </geometry>
       <material
         name="">
@@ -1416,13 +1390,11 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/right/Link11.STL" />
+          filename="package://meshes/inspire_right/Link11.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Link11"
-    type="revolute">
+  <joint name="Link11" type="revolute">
     <origin
       xyz="0.032132 0 0"
       rpy="-5.086E-10 -1.1653E-10 -0.22524" />
@@ -1438,8 +1410,8 @@
       effort="1"
       velocity="1" />
   </joint>
-  <link
-    name="Link2">
+
+  <link name="Link2">
     <inertial>
       <origin
         xyz="0.0107729781873397 0.00213783567195037 -1.14076048385314E-07"
@@ -1460,7 +1432,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/right/Link2.STL" />
+          filename="package://meshes/inspire_right/Link2.STL" />
       </geometry>
       <material
         name="">
@@ -1474,13 +1446,11 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/right/Link2.STL" />
+          filename="package://meshes/inspire_right/Link2.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Link2"
-    type="revolute">
+  <joint name="Link2" type="revolute">
     <origin
       xyz="0.081939 -0.0077547 0.015305"
       rpy="0.0056158 -0.034452 -0.16161" />
@@ -1496,8 +1466,7 @@
       effort="1"
       velocity="1" />
   </joint>
-  <link
-    name="Link22">
+  <link name="Link22">
     <inertial>
       <origin
         xyz="0.0190179451505274 0.00563447968575673 1.97663586783137E-08"
@@ -1518,7 +1487,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/right/Link22.STL" />
+          filename="package://meshes/inspire_right/Link22.STL" />
       </geometry>
       <material
         name="">
@@ -1532,13 +1501,11 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/right/Link22.STL" />
+          filename="package://meshes/inspire_right/Link22.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Link22"
-    type="revolute">
+  <joint name="Link22" type="revolute">
     <origin
       xyz="0.032132 0 0"
       rpy="-5.0853E-10 -1.1686E-10 -0.22588" />
@@ -1554,8 +1521,8 @@
       effort="1"
       velocity="1" />
   </joint>
-  <link
-    name="Link3">
+
+  <link name="Link3">
     <inertial>
       <origin
         xyz="0.0107730930654459 0.00213783260244832 -8.57328914740003E-08"
@@ -1576,7 +1543,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/right/Link3.STL" />
+          filename="package://meshes/inspire_right/Link3.STL" />
       </geometry>
       <material
         name="">
@@ -1590,13 +1557,11 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/right/Link3.STL" />
+          filename="package://meshes/inspire_right/Link3.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Link3"
-    type="revolute">
+  <joint name="Link3" type="revolute">
     <origin
       xyz="0.080765 -0.0077547 0.034505"
       rpy="0.010408 -0.086645 -0.11971" />
@@ -1612,8 +1577,7 @@
       effort="1"
       velocity="1" />
   </joint>
-  <link
-    name="Link33">
+  <link name="Link33">
     <inertial>
       <origin
         xyz="0.01901789870244 0.00563447090562313 1.70050325960271E-08"
@@ -1634,7 +1598,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/right/Link33.STL" />
+          filename="package://meshes/inspire_right/Link33.STL" />
       </geometry>
       <material
         name="">
@@ -1648,13 +1612,11 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/right/Link33.STL" />
+          filename="package://meshes/inspire_right/Link33.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Link33"
-    type="revolute">
+  <joint name="Link33" type="revolute">
     <origin
       xyz="0.032132 0 0"
       rpy="-5.0314E-10 -1.3824E-10 -0.26815" />
@@ -1670,8 +1632,9 @@
       effort="1"
       velocity="1" />
   </joint>
-  <link
-    name="Link4">
+
+
+  <link name="Link4">
     <inertial>
       <origin
         xyz="0.0107729931213964 0.00213782731321216 -7.95186542376647E-08"
@@ -1692,7 +1655,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/right/Link4.STL" />
+          filename="package://meshes/inspire_right/Link4.STL" />
       </geometry>
       <material
         name="">
@@ -1706,13 +1669,11 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/right/Link4.STL" />
+          filename="package://meshes/inspire_right/Link4.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Link4"
-    type="revolute">
+  <joint name="Link4" type="revolute">
     <origin
       xyz="0.078587 -0.0077547 0.053617"
       rpy="0.022524 -0.13781 -0.16255" />
@@ -1728,8 +1689,7 @@
       effort="1"
       velocity="1" />
   </joint>
-  <link
-    name="Link44">
+  <link name="Link44">
     <inertial>
       <origin
         xyz="0.0155924853997512 0.00555619186912998 -1.21775195708468E-07"
@@ -1750,7 +1710,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/right/Link44.STL" />
+          filename="package://meshes/inspire_right/Link44.STL" />
       </geometry>
       <material
         name="">
@@ -1764,13 +1724,11 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/right/Link44.STL" />
+          filename="package://meshes/inspire_right/Link44.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Link44"
-    type="revolute">
+  <joint name="Link44" type="revolute">
     <origin
       xyz="0.032132 0 0"
       rpy="-5.0686E-10 -1.2389E-10 -0.23972" />
@@ -1786,8 +1744,10 @@
       effort="1"
       velocity="1" />
   </joint>
-  <link
-    name="Link5">
+
+
+
+  <link name="Link5">
     <inertial>
       <origin
         xyz="-0.000668287872925624 -0.00209320996353089 0.0037633441647693"
@@ -1808,7 +1768,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/right/Link5.STL" />
+          filename="package://meshes/inspire_right/Link5.STL" />
       </geometry>
       <material
         name="">
@@ -1822,13 +1782,11 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/right/Link5.STL" />
+          filename="package://meshes/inspire_right/Link5.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Link5"
-    type="revolute">
+  <joint name="Link5" type="revolute">
     <origin
       xyz="0.0089225 -0.022949 -0.00699"
       rpy="0.092365 1.1827 -1.4853" />
@@ -1844,8 +1802,7 @@
       effort="1"
       velocity="1" />
   </joint>
-  <link
-    name="Link51">
+  <link name="Link51">
     <inertial>
       <origin
         xyz="0.0261732090129406 0.00353701767650547 -1.92601341111875E-07"
@@ -1866,7 +1823,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/right/Link51.STL" />
+          filename="package://meshes/inspire_right/Link51.STL" />
       </geometry>
       <material
         name="">
@@ -1880,13 +1837,11 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/right/Link51.STL" />
+          filename="package://meshes/inspire_right/Link51.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Link51"
-    type="revolute">
+  <joint name="Link51" type="revolute">
     <origin
       xyz="0.0065 -0.0035 0.00425"
       rpy="3.1416 -5.2736E-16 0.96726" />
@@ -1902,8 +1857,7 @@
       effort="1"
       velocity="1" />
   </joint>
-  <link
-    name="Link52">
+  <link name="Link52">
     <inertial>
       <origin
         xyz="-0.007316119869056 -0.00552223433089214 2.14610152510231E-07"
@@ -1924,7 +1878,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/right/Link52.STL" />
+          filename="package://meshes/inspire_right/Link52.STL" />
       </geometry>
       <material
         name="">
@@ -1938,13 +1892,11 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/right/Link52.STL" />
+          filename="package://meshes/inspire_right/Link52.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Link52"
-    type="revolute">
+  <joint name="Link52" type="revolute">
     <origin
       xyz="0.056001 0 0"
       rpy="0 -1.3878E-16 2.9661" />
@@ -1960,8 +1912,7 @@
       effort="1"
       velocity="1" />
   </joint>
-  <link
-    name="Link53">
+  <link name="Link53">
     <inertial>
       <origin
         xyz="-3.3937612879259E-06 0.0106230303829815 0.000584861433263272"
@@ -1982,7 +1933,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/right/Link53.STL" />
+          filename="package://meshes/inspire_right/Link53.STL" />
       </geometry>
       <material
         name="">
@@ -1996,13 +1947,11 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://meshes/right/Link53.STL" />
+          filename="package://meshes/inspire_right/Link53.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Link53"
-    type="revolute">
+  <joint name="Link53" type="revolute">
     <origin
       xyz="-0.022653 0 0"
       rpy="1.7291 -1.5708 0" />

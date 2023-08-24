@@ -4,10 +4,10 @@ from gym import spaces
 import pybullet as p
 import numpy as np
 
-class YumiEnv(gym.Env):
-    """docstring for YumiEnv"""
+class YumiInspireEnv(gym.Env):
+    """docstring for YumiInspireEnv"""
     def __init__(self):
-        super(YumiEnv, self).__init__()
+        super(YumiInspireEnv, self).__init__()
         p.connect(p.GUI)
         p.resetDebugVisualizerCamera(cameraDistance=1.5, cameraYaw=90, cameraPitch=-20, cameraTargetPosition=[0, 0, 0.1])
         self.step_counter = 0
@@ -94,7 +94,7 @@ class YumiEnv(gym.Env):
         p.resetSimulation()
         self.step_counter = 0
         self.yumiUid = p.loadURDF(os.path.join(os.path.dirname(os.path.realpath(__file__)),
-            "assets/yumi_with_hands.urdf"), useFixedBase=True, flags=p.URDF_USE_SELF_COLLISION+p.URDF_USE_SELF_COLLISION_EXCLUDE_ALL_PARENTS)
+            "assets/yumi_with_inspire_hands.urdf"), useFixedBase=True, flags=p.URDF_USE_SELF_COLLISION+p.URDF_USE_SELF_COLLISION_EXCLUDE_ALL_PARENTS)
         # self.tableUid = p.loadURDF(os.path.join(pybullet_data.getDataPath(),
         #     "table/table.urdf"), basePosition=[0,0,-0.65])
         p.setGravity(0, 0, -10)

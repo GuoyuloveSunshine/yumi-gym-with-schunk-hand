@@ -1,21 +1,21 @@
 <?xml version="1.0"?>
-<robot name="schunk_hand">
-    <link name="base_link">
+<robot name="left_schunk_hand">
+    <link name="left_hand_base">
       <visual>
         <origin xyz="0 0 -0.032" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://meshes/base10.dae" />
+          <mesh filename="package://meshes/schunk_left/base10.dae" />
         </geometry>
       </visual>
       <collision>
         <origin xyz="0 0 -0.032" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://meshes/base10.dae" />
+          <mesh filename="package://meshes/schunk_left/base10.dae" />
         </geometry>
       </collision>
     </link>
 
-    <link name="d">
+    <link name="Ld">
       <!-- <visual> -->
       <!--      <geometry> -->
       <!--        <cylinder length="0.110" radius="${cyl_radius}" /> -->
@@ -24,7 +24,7 @@
       <!-- </visual> -->
     </link>
 
-    <link name="h">
+    <link name="Lh">
       <!-- <visual> -->
       <!--      <origin rpy="0 1.571 0" xyz="${side*(-0.0125)} 0 0.0825" /> -->
       <!--      <geometry> -->
@@ -34,7 +34,7 @@
       <!-- </visual> -->
     </link>
 
-    <link name="d2">
+    <link name="Ld2">
       <!-- <visual> -->
       <!--      <origin rpy="0 0 0" xyz="${side*(-0.025)} 0 0.09625" /> -->
       <!--      <geometry> -->
@@ -44,40 +44,41 @@
       <!-- </visual> -->
     </link>
 
+    <link name="Le">
+    </link>
 
-    <link name="e1">
+    <link name="Le1">
       <visual>
         <origin rpy="0 0 0" xyz="0 0.01313 0" />
         <geometry>
-          <mesh scale="1 1 1" filename="package://meshes/h10.dae" />
+          <mesh scale="-1 1 1" filename="package://meshes/schunk_left/h10.dae" />
         </geometry>
       </visual>
       <collision>
         <origin rpy="0 0 0" xyz="0 0.01313 0" />
         <geometry>
-          <mesh scale="1 1 1" filename="package://meshes/h10.dae" />
+          <mesh scale="-1 1 1" filename="package://meshes/schunk_left/h10.dae" />
         </geometry>
       </collision>
     </link>
 
-
-    <link name="e2">
+    <link name="Le2">
       <visual>
-        <origin xyz="-0.0007 0 -0.01002" />
+        <origin xyz="0.0007 0 -0.01002" />
         <geometry>
-          <mesh scale="1 1 1" filename="package://meshes/h11.dae" />
+          <mesh scale="-1 1 1" filename="package://meshes/schunk_left/h11.dae" />
         </geometry>
       </visual>
       <collision>
-        <origin xyz="-0.0007 0 -0.01002" />
+        <origin xyz="0.0007 0 -0.01002" />
         <geometry>
-          <mesh scale="1 1 1" filename="package://meshes/h11.dae" />
+          <mesh scale="-1 1 1" filename="package://meshes/schunk_left/h11.dae" />
         </geometry>
       </collision>
     </link>
 
     <!-- LENGTH NOT FOUND IN DATASHEET! GUESSED!!! -->
-    <link name="e3">
+    <link name="Le3">
       <!-- <visual> -->
       <!--      <origin rpy="0 0 0" xyz="${side*(0.0175)} 0 0.015" /> -->
       <!--      <geometry> -->
@@ -87,11 +88,8 @@
       <!-- </visual> -->
     </link>
 
-    <link name="e">
-    </link>
-
     <!-- LENGTH NOT FOUND IN DATASHEET! GUESSED, BUT POSITION CALCULATED: E4 = D-G-F!!! -->
-    <link name="e4">
+    <link name="Le4">
       <!-- <visual> -->
       <!--      <origin rpy="0 0 0" xyz="${side*(0.02825)} 0 0.043" /> -->
       <!--      <geometry> -->
@@ -102,7 +100,7 @@
     </link>
 
     <!-- LENGTH NOT FOUND IN DATASHEET! GUESSED, BUT POSITION CALCULATED: E5 = D-G!!! -->
-    <link name="e5">
+    <link name="Le5">
       <!-- <visual> -->
       <!--      <origin rpy="0 0 0" xyz="${side*(0.00675)} 0 0.04775" /> -->
       <!--      <geometry> -->
@@ -112,189 +110,188 @@
       <!-- </visual> -->
     </link>
 
-
-    <!-- THUMB LINKS -->
-    <link name="thumb_1">
+  <!-- THUMB LINKS -->
+    <link name="Lthumb_1">
       <visual>
         <origin xyz="0 0 0.02442" />
         <geometry>
-          <mesh scale="1 1 1" filename="package://meshes/d10.dae" />
+          <mesh scale="1 -1 1" filename="package://meshes/schunk_left/d10.dae" />
         </geometry>
       </visual>
       <collision>
         <origin xyz="0 0 0.02442" />
         <geometry>
-          <mesh scale="1 1 1" filename="package://meshes/d10.dae" />
+          <mesh scale="1 -1 1" filename="package://meshes/schunk_left/d10.dae" />
         </geometry>
       </collision>
     </link>
 
-    <link name="thumb_virtual_2">
+    <link name="Lthumb_virtual_2">
     </link>
 
-    <link name="thumb_3">
+    <link name="Lthumb_3">
       <visual>
         <geometry>
-          <mesh scale="1 1 1" filename="package://meshes/d11.dae" />
+          <mesh scale="1 -1 -1" filename="package://meshes/schunk_left/d11.dae" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh scale="1 1 1" filename="package://meshes/d11.dae" />
+          <mesh scale="1 -1 -1" filename="package://meshes/schunk_left/d11.dae" />
         </geometry>
       </collision>
     </link>
 
-    <link name="thumb_4">
+    <link name="Lthumb_4">
       <visual>
         <geometry>
-          <mesh scale="1 1 1" filename="package://meshes/d12.dae" />
+          <mesh scale="1 -1 -1" filename="package://meshes/schunk_left/d12.dae" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh scale="1 1 1" filename="package://meshes/d12.dae" />
+          <mesh scale="1 -1 -1" filename="package://meshes/schunk_left/d12.dae" />
         </geometry>
       </collision>
     </link>
 
-    <link name="thumb_5">
+    <link name="Lthumb_5">
       <visual>
         <geometry>
-          <mesh scale="1 1 1" filename="package://meshes/d13.dae" />
+          <mesh scale="1 -1 -1" filename="package://meshes/schunk_left/d13.dae" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh scale="1 1 1" filename="package://meshes/d13.dae" />
+          <mesh scale="1 -1 -1" filename="package://meshes/schunk_left/d13.dae" />
         </geometry>
       </collision>
     </link>
 
 
   <!-- INDEX FINGER LINKS -->
-    <link name="virtual_index_1">
+    <link name="Lvirtual_index_1">
       <visual>
         <origin xyz="0 0 0.01321" />
         <geometry>
-          <mesh filename="package://meshes/f10.dae" />
+          <mesh filename="package://meshes/schunk_left/f10.dae" />
         </geometry>
       </visual>
       <collision>
         <origin xyz="0 0 0.01321" />
         <geometry>
-          <mesh filename="package://meshes/f10.dae" />
+          <mesh filename="package://meshes/schunk_left/f10.dae" />
         </geometry>
       </collision>
     </link>
 
-    <link name="index_2">
+    <link name="Lindex_2">
       <visual>
         <geometry>
-          <mesh filename="package://meshes/f11.dae" />
+          <mesh filename="package://meshes/schunk_left/f11.dae" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://meshes/f11.dae" />
+          <mesh filename="package://meshes/schunk_left/f11.dae" />
         </geometry>
       </collision>
     </link>
 
-    <link name="index_3">
+    <link name="Lindex_3">
       <visual>
         <geometry>
-          <mesh filename="package://meshes/f12.dae" />
+          <mesh filename="package://meshes/schunk_left/f12.dae" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://meshes/f12.dae" />
+          <mesh filename="package://meshes/schunk_left/f12.dae" />
         </geometry>
       </collision>
     </link>
 
-    <link name="index_4">
+    <link name="Lindex_4">
       <visual>
         <geometry>
-          <mesh filename="package://meshes/f13.dae" />
+          <mesh filename="package://meshes/schunk_left/f13.dae" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://meshes/f13.dae" />
+          <mesh filename="package://meshes/schunk_left/f13.dae" />
         </geometry>
       </collision>
     </link>
 
   <!-- MIDDLE FINGER LINKS -->
-    <link name="virtual_middle_1">
+    <link name="Lvirtual_middle_1">
       <visual>
         <origin xyz="0 0 0.01321" />
         <geometry>
-          <mesh filename="package://meshes/f20.dae" />
+          <mesh filename="package://meshes/schunk_left/f20.dae" />
         </geometry>
       </visual>
       <collision>
         <origin xyz="0 0 0.01321" />
         <geometry>
-          <mesh filename="package://meshes/f20.dae" />
+          <mesh filename="package://meshes/schunk_left/f20.dae" />
         </geometry>
       </collision>
     </link>
 
-    <link name="middle_2">
+    <link name="Lmiddle_2">
       <visual>
         <geometry>
-          <mesh filename="package://meshes/f21.dae" />
+          <mesh filename="package://meshes/schunk_left/f21.dae" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://meshes/f21.dae" />
+          <mesh filename="package://meshes/schunk_left/f21.dae" />
         </geometry>
       </collision>
     </link>
 
-    <link name="middle_3">
+    <link name="Lmiddle_3">
       <visual>
         <geometry>
-          <mesh filename="package://meshes/f22.dae" />
+          <mesh filename="package://meshes/schunk_left/f22.dae" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://meshes/f22.dae" />
+          <mesh filename="package://meshes/schunk_left/f22.dae" />
         </geometry>
       </collision>
     </link>
 
-    <link name="middle_4">
+    <link name="Lmiddle_4">
       <visual>
         <geometry>
-          <mesh filename="package://meshes/f23.dae" />
+          <mesh filename="package://meshes/schunk_left/f23.dae" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://meshes/f23.dae" />
+          <mesh filename="package://meshes/schunk_left/f23.dae" />
         </geometry>
       </collision>
     </link>
 
 
-  <!-- RING FINGER LINKS -->
+    <!-- RING FINGER LINKS -->
     <link name="virtual_ring_1">
       <visual>
         <origin xyz="0 0 -0.01321" />
         <geometry>
-          <mesh filename="package://meshes/f30.dae" />
+          <mesh filename="package://meshes/schunk_left/f30.dae" />
         </geometry>
       </visual>
       <collision>
         <origin xyz="0 0 -0.01321" />
         <geometry>
-          <mesh filename="package://meshes/f30.dae" />
+          <mesh filename="package://meshes/schunk_left/f30.dae" />
         </geometry>
       </collision>
     </link>
@@ -302,12 +299,12 @@
     <link name="ring_2">
       <visual>
         <geometry>
-          <mesh filename="package://meshes/f31.dae" />
+          <mesh filename="package://meshes/schunk_left/f31.dae" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://meshes/f31.dae" />
+          <mesh filename="package://meshes/schunk_left/f31.dae" />
         </geometry>
       </collision>
     </link>
@@ -315,12 +312,12 @@
     <link name="ring_3">
       <visual>
         <geometry>
-          <mesh filename="package://meshes/f32.dae" />
+          <mesh filename="package://meshes/schunk_left/f32.dae" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://meshes/f32.dae" />
+          <mesh filename="package://meshes/schunk_left/f32.dae" />
         </geometry>
       </collision>
     </link>
@@ -328,259 +325,255 @@
     <link name="ring_4">
       <visual>
         <geometry>
-          <mesh filename="package://meshes/f33.dae" />
+          <mesh filename="package://meshes/schunk_left/f33.dae" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://meshes/f33.dae" />
+          <mesh filename="package://meshes/schunk_left/f33.dae" />
         </geometry>
       </collision>
     </link>
 
   <!-- PINKY FINGER LINKS -->
-    <link name="virtual_pinky_1">
+    <link name="Lvirtual_pinky_1">
       <visual>
         <origin xyz="0 0 -0.01321" />
         <geometry>
-          <mesh filename="package://meshes/f40.dae" />
+          <mesh filename="package://meshes/schunk_left/f40.dae" />
         </geometry>
       </visual>
       <collision>
         <origin xyz="0 0 -0.01321" />
         <geometry>
-          <mesh filename="package://meshes/f40.dae" />
+          <mesh filename="package://meshes/schunk_left/f40.dae" />
         </geometry>
       </collision>
     </link>
 
-    <link name="pinky_2">
+    <link name="Lpinky_2">
       <visual>
         <geometry>
-          <mesh filename="package://meshes/f41.dae" />
+          <mesh filename="package://meshes/schunk_left/f41.dae" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://meshes/f41.dae" />
+          <mesh filename="package://meshes/schunk_left/f41.dae" />
         </geometry>
       </collision>
     </link>
 
-    <link name="pinky_3">
+    <link name="Lpinky_3">
       <visual>
         <geometry>
-          <mesh filename="package://meshes/f42.dae" />
+          <mesh filename="package://meshes/schunk_left/f42.dae" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://meshes/f42.dae" />
+          <mesh filename="package://meshes/schunk_left/f42.dae" />
         </geometry>
       </collision>
     </link>
 
-    <link name="pinky_4">
+    <link name="Lpinky_4">
       <visual>
         <geometry>
-          <mesh filename="package://meshes/f43.dae" />
+          <mesh filename="package://meshes/schunk_left/f43.dae" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://meshes/f43.dae" />
+          <mesh filename="package://meshes/schunk_left/f43.dae" />
         </geometry>
       </collision>
     </link>
 
 
-
-
-
-
+  
   <!-- BASE_LINE JOINTS -->
     <!-- JOINT NOT FOR BASE_LINE. BUT WRITTEN DOWN HERE FOR BETTER UX -->
-    <joint name="f1" type="fixed">
-      <parent link="e1" />
-      <child link="d" />
+    <joint name="Lf1" type="fixed">
+      <parent link="Le1" />
+      <child link="Ld" />
       <origin xyz="0 0 0" rpy="0 0 0" />
     </joint>
 
-    <joint name="f2" type="fixed">
-      <parent link="d" />
-      <child link="h" />
+    <joint name="Lf2" type="fixed">
+      <parent link="Ld" />
+      <child link="Lh" />
       <origin xyz="0 0 0" rpy="0 0 0" />
     </joint>
 
 
-    <joint name="f3" type="fixed">
-      <parent link="h" />
-      <child link="d2" />
+    <joint name="Lf3" type="fixed">
+      <parent link="Lh" />
+      <child link="Ld2" />
       <origin xyz="0 0 0" rpy="0 0 0" />
     </joint>
 
-    <joint name="f4" type="fixed">
-      <parent link="base_link" />
-      <child link="e1" />
+    <joint name="Lf4" type="fixed">
+      <parent link="left_hand_base" />
+      <child link="Le1" />
       <origin xyz="0 -0.01313 0" rpy="0 0 0" />
     </joint>
 
-    <joint name="f5" type="fixed">
-      <parent link="e2" />
-      <child link="e3" />
+
+    <joint name="Lf5" type="fixed">
+      <parent link="Le2" />
+      <child link="Le3" />
       <origin xyz="0 -0.0060 0" rpy="0 0 0" />
     </joint>
 
-    <joint name="f6" type="fixed">
-      <parent link="e3" />
-      <child link="e" />
+    <joint name="Lf6" type="fixed">
+      <parent link="Le3" />
+      <child link="Le" />
       <origin xyz="0 0 0" rpy="0 0 0" />
     </joint>
 
-    <joint name="f7" type="fixed">
-      <parent link="e" />
-      <child link="e4" />
+    <joint name="Lf7" type="fixed">
+      <parent link="Le" />
+      <child link="Le4" />
       <origin xyz="0 0 0" rpy="0 0 0" />
     </joint>
 
-    <joint name="f8" type="fixed">
-      <parent link="e" />
-      <child link="e5" />
+    <joint name="Lf8" type="fixed">
+      <parent link="Le" />
+      <child link="Le5" />
       <origin xyz="0 0 0" rpy="0 0 0" />
     </joint>
 
-
-  <!-- HAND JOINT -->
-    <joint name="Part_Hand" type="revolute">
-      <parent link="e1" />
-      <child link="e2" />
+  <!-- HAND JOINTS -->
+    <joint name="LPart_Hand" type="revolute">
+      <parent link="Le1" />
+      <child link="Le2" />
       <limit effort="1000.0" lower="0.0" upper="0.98786" velocity="1" />
-      <origin xyz="0.01840 0.006 0.0375" rpy="0 0 0" />
-      <axis xyz="0 0 1" />
-      <mimic joint="Thumb_Opposition" multiplier="1" offset="0" />
+      <origin xyz="-0.01840 0.006 0.0375" rpy="0 0 0" />
+      <axis xyz="0 0 -1" />
+      <mimic joint="LThumb_Opposition" multiplier="1" offset="0" />
     </joint>
-
 
   <!-- THUMB JOINTS -->
-    <joint name="Thumb_Opposition" type="revolute">
-      <parent link="e1" />
-      <child link="thumb_1" />
+    <joint name="LThumb_Opposition" type="revolute">
+      <parent link="Le1" />
+      <child link="Lthumb_1" />
       <limit effort="1000.0" lower="0.0" upper="0.9879" velocity="1" />
-      <origin xyz="-0.01690 0.02626 0" rpy="0 0.2618 1.571" />
+      <origin xyz="0.01690 0.02626 0" rpy="0 0.2618 1.571" />
+      <axis xyz="0 0 1" />
+    </joint>
+
+    <joint name="LThumb_Helper" type="fixed">
+      <parent link="Lthumb_1" />
+      <child link="Lthumb_virtual_2" />
+      <origin xyz="0 0 0.04596" rpy="0 -1.5707 3.1416" />
+    </joint>
+
+    <joint name="LThumb_Flexion" type="revolute">
+      <parent link="Lthumb_virtual_2" />
+      <child link="Lthumb_3" />
+      <limit effort="1000.0" lower="0.0" upper="0.9704" velocity="1" />
+      <origin xyz="0 0 0" rpy="0 0 0.9704" />
       <axis xyz="0 0 -1" />
     </joint>
 
-    <joint name="Thumb_Helper" type="fixed">
-      <parent link="thumb_1" />
-      <child link="thumb_virtual_2" />
-      <origin xyz="0 0 0.04596" rpy="0 -1.5707 3.1416" />
-    </joint>
-    
-    <joint name="Thumb_Flexion" type="revolute">
-      <parent link="thumb_virtual_2" />
-      <child link="thumb_3" />
-      <limit effort="1000.0" lower="0.0" upper="0.9704" velocity="1" />
-      <origin xyz="0 0 0" rpy="0 0 -0.9704" />
-      <axis xyz="0 0 1" />
-    </joint>
-
-    <joint name="Thumb_3" type="revolute">
-      <parent link="thumb_3" />
-      <child link="thumb_4" />
+    <joint name="LThumb_3" type="revolute">
+      <parent link="Lthumb_3" />
+      <child link="Lthumb_4" />
       <limit effort="1000.0" lower="0.0" upper="0.98506" velocity="1" />
       <origin xyz="0.0485 0 0" rpy="0 0 0" />
-      <axis xyz="0 0 1" />
-      <mimic joint="Thumb_Flexion" multiplier="1.01511" offset="0" />
+      <axis xyz="0 0 -1" />
+      <mimic joint="LThumb_Flexion" multiplier="1.01511" offset="0" />
     </joint>
 
-    <joint name="Thumb_4" type="revolute">
-      <parent link="thumb_4" />
-      <child link="thumb_5" />
+    <joint name="LThumb_4" type="revolute">
+      <parent link="Lthumb_4" />
+      <child link="Lthumb_5" />
       <limit effort="1000.0" lower="0.0" upper="1.406" velocity="1" />
       <origin xyz="0.030 0 0" rpy="0 0 0" />
-      <axis xyz="0 0 1" />
-      <mimic joint="Thumb_Flexion" multiplier="1.44889" offset="0" />
+      <axis xyz="0 0 -1" />
+      <mimic joint="LThumb_Flexion" multiplier="1.44889" offset="0" />
     </joint>
 
   <!-- INDEX FINGER JOINTS -->
-    <joint name="Index_Spread" type="revolute">
-      <parent link="d2" />
-      <child link="virtual_index_1" />
+    <joint name="LIndex_Spread" type="revolute">
+      <parent link="Ld2" />
+      <child link="Lvirtual_index_1" />
       <limit effort="1000.0" lower="0.0" upper="0.28833" velocity="1" />
-      <origin xyz="-0.025 0 0.110" rpy="0 -1.5707 1.5707" />
-      <axis xyz="0 0 1" />
-      <mimic joint="Pinky_Spread" multiplier="0.5" offset="0" />
+      <origin xyz="0.025 0 0.110" rpy="0 -1.5707 1.5707" />
+      <axis xyz="0 0 -1" />
+      <mimic joint="LPinky_Spread" multiplier="0.5" offset="0" />
     </joint>
 
-    <joint name="Index_Proximal" type="revolute">
-      <parent link="virtual_index_1" />
-      <child link="index_2" />
+    <joint name="LIndex_Proximal" type="revolute">
+      <parent link="Lvirtual_index_1" />
+      <child link="Lindex_2" />
       <limit effort="1000.0" lower="0.0" upper="0.79849" velocity="1" />
       <origin xyz="0 0 0" rpy="-1.5707 0 0" />
       <axis xyz="0 0 1" />
     </joint>
 
-    <joint name="Index_3" type="revolute">
-      <parent link="index_2" />
-      <child link="index_3" />
+    <joint name="LIndex_3" type="revolute">
+      <parent link="Lindex_2" />
+      <child link="Lindex_3" />
       <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
       <origin xyz="0.04804 0 0" rpy="0 0 0" />
       <axis xyz="0 0 1" />
     </joint>
 
-    <joint name="Index_4" type="revolute">
-      <parent link="index_3" />
-      <child link="index_4" />
+    <joint name="LIndex_4" type="revolute">
+      <parent link="Lindex_3" />
+      <child link="Lindex_4" />
       <limit effort="1000.0" lower="0" upper="1.394" velocity="1" />
       <origin xyz="0.026 0 0" rpy="0 0 0" />
       <axis xyz="0 0 1" />
-      <mimic joint="Index_3" multiplier="1.0450" offset="0" />
+      <mimic joint="LIndex_3" multiplier="1.0450" offset="0" />
     </joint>
 
   <!-- MIDDLE FINGER JOINTS -->
-    <joint name="Middle_Spread_Dummy" type="fixed">
-      <parent link="d" />
-      <child link="virtual_middle_1" />
+    <joint name="LMiddle_Spread_Dummy" type="fixed">
+      <parent link="Ld" />
+      <child link="Lvirtual_middle_1" />
       <origin xyz="0 0 0.110" rpy="0 -1.5707 1.5707" />
     </joint>
 
-    <joint name="Middle_Proximal" type="revolute">
-      <parent link="virtual_middle_1" />
-      <child link="middle_2" />
+    <joint name="LMiddle_Proximal" type="revolute">
+      <parent link="Lvirtual_middle_1" />
+      <child link="Lmiddle_2" />
       <limit effort="1000.0" lower="0.0" upper="0.79849" velocity="1" />
       <origin xyz="0 0 0" rpy="-1.5707 0 0" />
       <axis xyz="0 0 1" />
     </joint>
 
-    <joint name="Middle_3" type="revolute">
-      <parent link="middle_2" />
-      <child link="middle_3" />
+    <joint name="LMiddle_3" type="revolute">
+      <parent link="Lmiddle_2" />
+      <child link="Lmiddle_3" />
       <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
       <origin xyz="0.05004 0 0" rpy="0 0 0" />
       <axis xyz="0 0 1" />
     </joint>
 
-    <joint name="Middle_4" type="revolute">
-      <parent link="middle_3" />
-      <child link="middle_4" />
+    <joint name="LMiddle_4" type="revolute">
+      <parent link="Lmiddle_3" />
+      <child link="Lmiddle_4" />
       <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
       <origin xyz="0.032 0 0" rpy="0 0 0" />
       <axis xyz="0 0 1" />
-      <mimic joint="Middle_3" multiplier="1.0454" offset="0" />
+      <mimic joint="LMiddle_3" multiplier="1.0454" offset="0" />
     </joint>
 
 
   <!-- RING FINGER JOINTS -->
-    <joint name="Ring_Spread" type="revolute">
-      <parent link="e5" />
+    <joint name="LRing_Spread" type="revolute">
+      <parent link="Le5" />
       <child link="virtual_ring_1" />
       <limit effort="1000.0" lower="0.0" upper="0.28833" velocity="1" />
-      <origin xyz="0.003855 0 0.0655" rpy="-1.5707 -1.5707 0" />
-      <axis xyz="0 0 1" />
-      <mimic joint="Pinky_Spread" multiplier="0.5" offset="0" />
+      <origin xyz="-0.003855 0 0.0655" rpy="-1.5707 -1.5707 0" />
+      <axis xyz="0 0 -1" />
+      <mimic joint="LPinky_Spread" multiplier="0.5" offset="0" />
     </joint>
 
-    <joint name="Ring_Proximal" type="revolute">
+    <joint name="LRing_Proximal" type="revolute">
       <parent link="virtual_ring_1" />
       <child link="ring_2" />
       <limit effort="1000.0" lower="0.0" upper="0.98175" velocity="1" />
@@ -588,58 +581,59 @@
       <axis xyz="0 0 1" />
     </joint>
 
-    <joint name="Ring_3" type="revolute">
+    <joint name="LRing_3" type="revolute">
       <parent link="ring_2" />
       <child link="ring_3" />
       <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
       <origin xyz="0.05004 0 0" rpy="0 0 0" />
       <axis xyz="0 0 1" />
-      <mimic joint="Ring_Proximal" multiplier="1.3588" offset="0" />
+      <mimic joint="LRing_Proximal" multiplier="1.3588" offset="0" />
     </joint>
 
-    <joint name="Ring_4" type="revolute">
+    <joint name="LRing_4" type="revolute">
       <parent link="ring_3" />
       <child link="ring_4" />
       <limit effort="1000.0" lower="0" upper="1.395" velocity="1" />
       <origin xyz="0.032 0 0" rpy="0 0 0" />
       <axis xyz="0 0 1" />
-      <mimic joint="Ring_Proximal" multiplier="1.42093" offset="0" />
+      <mimic joint="LRing_Proximal" multiplier="1.42093" offset="0" />
     </joint>
 
 
   <!-- PINKY JOINTS -->
-    <joint name="Pinky_Spread" type="revolute">
-      <parent link="e4" />
-      <child link="virtual_pinky_1" />
+    <joint name="LPinky_Spread" type="revolute">
+      <parent link="Le4" />
+      <child link="Lvirtual_pinky_1" />
       <limit effort="1000.0" lower="0.0" upper="0.5829" velocity="1" />
-      <origin xyz="0.025355 0 0.056" rpy="-1.5707 -1.5707 0" />
-      <axis xyz="0 0 1" />
+      <origin xyz="-0.025355 0 0.056" rpy="-1.5707 -1.5707 0" />
+      <axis xyz="0 0 -1" />
     </joint>
 
-    <joint name="Pinky_Proximal" type="revolute">
-      <parent link="virtual_pinky_1" />
-      <child link="pinky_2" />
+    <joint name="LPinky_Proximal" type="revolute">
+      <parent link="Lvirtual_pinky_1" />
+      <child link="Lpinky_2" />
       <limit effort="1000.0" lower="0.0" upper="0.98175" velocity="1" />
       <origin xyz="0 0 0" rpy="1.5707 0 0" />
       <axis xyz="0 0 1" />
     </joint>
 
-    <joint name="Pinky_3" type="revolute">
-      <parent link="pinky_2" />
-      <child link="pinky_3" />
+    <joint name="LPinky_3" type="revolute">
+      <parent link="Lpinky_2" />
+      <child link="Lpinky_3" />
       <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
       <origin xyz="0.04454 0 0" rpy="0 0 0" />
       <axis xyz="0 0 1" />
-      <mimic joint="Pinky_Proximal" multiplier="1.35880" offset="0" />
+      <mimic joint="LPinky_Proximal" multiplier="1.35880" offset="0" />
     </joint>
 
-    <joint name="Pinky_4" type="revolute">
-      <parent link="pinky_3" />
-      <child link="pinky_4" />
+    <joint name="LPinky_4" type="revolute">
+      <parent link="Lpinky_3" />
+      <child link="Lpinky_4" />
       <limit effort="1000.0" lower="0" upper="1.3971" velocity="1" />
       <origin xyz="0.022 0 0" rpy="0 0 0" />
       <axis xyz="0 0 1" />
-      <mimic joint="Pinky_Proximal" multiplier="1.42307" offset="0" />
+      <mimic joint="LPinky_Proximal" multiplier="1.42307" offset="0" />
     </joint>
+
 
 </robot>
