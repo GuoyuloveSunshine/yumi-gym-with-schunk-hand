@@ -4,13 +4,13 @@
       <visual>
         <origin xyz="0 0 -0.032" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://meshes/schunk_left/base10.dae" />
+          <mesh filename="package://meshes/schunk_left/base10.stl" />
         </geometry>
       </visual>
       <collision>
         <origin xyz="0 0 -0.032" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://meshes/schunk_left/base10.dae" />
+          <mesh filename="package://meshes/schunk_left/base10.stl" />
         </geometry>
       </collision>
     </link>
@@ -51,13 +51,13 @@
       <visual>
         <origin rpy="0 0 0" xyz="0 0.01313 0" />
         <geometry>
-          <mesh scale="-1 1 1" filename="package://meshes/schunk_left/h10.dae" />
+          <mesh scale="-1 1 1" filename="package://meshes/schunk_left/h10.stl" />
         </geometry>
       </visual>
       <collision>
         <origin rpy="0 0 0" xyz="0 0.01313 0" />
         <geometry>
-          <mesh scale="-1 1 1" filename="package://meshes/schunk_left/h10.dae" />
+          <mesh scale="-1 1 1" filename="package://meshes/schunk_left/h10.stl" />
         </geometry>
       </collision>
     </link>
@@ -66,13 +66,13 @@
       <visual>
         <origin xyz="0.0007 0 -0.01002" />
         <geometry>
-          <mesh scale="-1 1 1" filename="package://meshes/schunk_left/h11.dae" />
+          <mesh scale="-1 1 1" filename="package://meshes/schunk_left/h11.stl" />
         </geometry>
       </visual>
       <collision>
         <origin xyz="0.0007 0 -0.01002" />
         <geometry>
-          <mesh scale="-1 1 1" filename="package://meshes/schunk_left/h11.dae" />
+          <mesh scale="-1 1 1" filename="package://meshes/schunk_left/h11.stl" />
         </geometry>
       </collision>
     </link>
@@ -115,13 +115,13 @@
       <visual>
         <origin xyz="0 0 0.02442" />
         <geometry>
-          <mesh scale="1 -1 1" filename="package://meshes/schunk_left/d10.dae" />
+          <mesh scale="1 -1 1" filename="package://meshes/schunk_left/d10.stl" />
         </geometry>
       </visual>
       <collision>
         <origin xyz="0 0 0.02442" />
         <geometry>
-          <mesh scale="1 -1 1" filename="package://meshes/schunk_left/d10.dae" />
+          <mesh scale="1 -1 1" filename="package://meshes/schunk_left/d10.stl" />
         </geometry>
       </collision>
     </link>
@@ -132,12 +132,12 @@
     <link name="Lthumb_3">
       <visual>
         <geometry>
-          <mesh scale="1 -1 -1" filename="package://meshes/schunk_left/d11.dae" />
+          <mesh scale="1 -1 -1" filename="package://meshes/schunk_left/d11.stl" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh scale="1 -1 -1" filename="package://meshes/schunk_left/d11.dae" />
+          <mesh scale="1 -1 -1" filename="package://meshes/schunk_left/d11.stl" />
         </geometry>
       </collision>
     </link>
@@ -145,12 +145,12 @@
     <link name="Lthumb_4">
       <visual>
         <geometry>
-          <mesh scale="1 -1 -1" filename="package://meshes/schunk_left/d12.dae" />
+          <mesh scale="1 -1 -1" filename="package://meshes/schunk_left/d12.stl" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh scale="1 -1 -1" filename="package://meshes/schunk_left/d12.dae" />
+          <mesh scale="1 -1 -1" filename="package://meshes/schunk_left/d12.stl" />
         </geometry>
       </collision>
     </link>
@@ -158,12 +158,12 @@
     <link name="Lthumb_5">
       <visual>
         <geometry>
-          <mesh scale="1 -1 -1" filename="package://meshes/schunk_left/d13.dae" />
+          <mesh scale="1 -1 -1" filename="package://meshes/schunk_left/d13.stl" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh scale="1 -1 -1" filename="package://meshes/schunk_left/d13.dae" />
+          <mesh scale="1 -1 -1" filename="package://meshes/schunk_left/d13.stl" />
         </geometry>
       </collision>
     </link>
@@ -174,13 +174,13 @@
       <visual>
         <origin xyz="0 0 0.01321" />
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f10.dae" />
+          <mesh filename="package://meshes/schunk_left/f10.stl" />
         </geometry>
       </visual>
       <collision>
         <origin xyz="0 0 0.01321" />
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f10.dae" />
+          <mesh filename="package://meshes/schunk_left/f10.stl" />
         </geometry>
       </collision>
     </link>
@@ -188,12 +188,12 @@
     <link name="Lindex_2">
       <visual>
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f11.dae" />
+          <mesh filename="package://meshes/schunk_left/f11.stl" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f11.dae" />
+          <mesh filename="package://meshes/schunk_left/f11.stl" />
         </geometry>
       </collision>
     </link>
@@ -201,12 +201,12 @@
     <link name="Lindex_3">
       <visual>
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f12.dae" />
+          <mesh filename="package://meshes/schunk_left/f12.stl" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f12.dae" />
+          <mesh filename="package://meshes/schunk_left/f12.stl" />
         </geometry>
       </collision>
     </link>
@@ -214,12 +214,12 @@
     <link name="Lindex_4">
       <visual>
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f13.dae" />
+          <mesh filename="package://meshes/schunk_left/f13.stl" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f13.dae" />
+          <mesh filename="package://meshes/schunk_left/f13.stl" />
         </geometry>
       </collision>
     </link>
@@ -229,13 +229,13 @@
       <visual>
         <origin xyz="0 0 0.01321" />
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f20.dae" />
+          <mesh filename="package://meshes/schunk_left/f20.stl" />
         </geometry>
       </visual>
       <collision>
         <origin xyz="0 0 0.01321" />
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f20.dae" />
+          <mesh filename="package://meshes/schunk_left/f20.stl" />
         </geometry>
       </collision>
     </link>
@@ -243,12 +243,12 @@
     <link name="Lmiddle_2">
       <visual>
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f21.dae" />
+          <mesh filename="package://meshes/schunk_left/f21.stl" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f21.dae" />
+          <mesh filename="package://meshes/schunk_left/f21.stl" />
         </geometry>
       </collision>
     </link>
@@ -256,12 +256,12 @@
     <link name="Lmiddle_3">
       <visual>
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f22.dae" />
+          <mesh filename="package://meshes/schunk_left/f22.stl" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f22.dae" />
+          <mesh filename="package://meshes/schunk_left/f22.stl" />
         </geometry>
       </collision>
     </link>
@@ -269,12 +269,12 @@
     <link name="Lmiddle_4">
       <visual>
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f23.dae" />
+          <mesh filename="package://meshes/schunk_left/f23.stl" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f23.dae" />
+          <mesh filename="package://meshes/schunk_left/f23.stl" />
         </geometry>
       </collision>
     </link>
@@ -285,13 +285,13 @@
       <visual>
         <origin xyz="0 0 -0.01321" />
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f30.dae" />
+          <mesh filename="package://meshes/schunk_left/f30.stl" />
         </geometry>
       </visual>
       <collision>
         <origin xyz="0 0 -0.01321" />
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f30.dae" />
+          <mesh filename="package://meshes/schunk_left/f30.stl" />
         </geometry>
       </collision>
     </link>
@@ -299,12 +299,12 @@
     <link name="ring_2">
       <visual>
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f31.dae" />
+          <mesh filename="package://meshes/schunk_left/f31.stl" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f31.dae" />
+          <mesh filename="package://meshes/schunk_left/f31.stl" />
         </geometry>
       </collision>
     </link>
@@ -312,12 +312,12 @@
     <link name="ring_3">
       <visual>
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f32.dae" />
+          <mesh filename="package://meshes/schunk_left/f32.stl" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f32.dae" />
+          <mesh filename="package://meshes/schunk_left/f32.stl" />
         </geometry>
       </collision>
     </link>
@@ -325,12 +325,12 @@
     <link name="ring_4">
       <visual>
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f33.dae" />
+          <mesh filename="package://meshes/schunk_left/f33.stl" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f33.dae" />
+          <mesh filename="package://meshes/schunk_left/f33.stl" />
         </geometry>
       </collision>
     </link>
@@ -340,13 +340,13 @@
       <visual>
         <origin xyz="0 0 -0.01321" />
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f40.dae" />
+          <mesh filename="package://meshes/schunk_left/f40.stl" />
         </geometry>
       </visual>
       <collision>
         <origin xyz="0 0 -0.01321" />
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f40.dae" />
+          <mesh filename="package://meshes/schunk_left/f40.stl" />
         </geometry>
       </collision>
     </link>
@@ -354,12 +354,12 @@
     <link name="Lpinky_2">
       <visual>
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f41.dae" />
+          <mesh filename="package://meshes/schunk_left/f41.stl" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f41.dae" />
+          <mesh filename="package://meshes/schunk_left/f41.stl" />
         </geometry>
       </collision>
     </link>
@@ -367,12 +367,12 @@
     <link name="Lpinky_3">
       <visual>
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f42.dae" />
+          <mesh filename="package://meshes/schunk_left/f42.stl" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f42.dae" />
+          <mesh filename="package://meshes/schunk_left/f42.stl" />
         </geometry>
       </collision>
     </link>
@@ -380,12 +380,12 @@
     <link name="Lpinky_4">
       <visual>
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f43.dae" />
+          <mesh filename="package://meshes/schunk_left/f43.stl" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://meshes/schunk_left/f43.dae" />
+          <mesh filename="package://meshes/schunk_left/f43.stl" />
         </geometry>
       </collision>
     </link>

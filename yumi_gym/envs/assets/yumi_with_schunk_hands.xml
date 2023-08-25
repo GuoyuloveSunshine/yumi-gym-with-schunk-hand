@@ -1,0 +1,300 @@
+<mujoco model="yumi">
+  <compiler angle="radian" autolimits="true"/>
+  <size/>
+  <default/>
+  <asset>
+    <mesh name="body" file="meshes/body.stl"/>
+    <mesh name="link_1" file="meshes/link_1.stl"/>
+    <mesh name="link_2" file="meshes/link_2.stl"/>
+    <mesh name="link_3" file="meshes/link_3.stl"/>
+    <mesh name="link_4" file="meshes/link_4.stl"/>
+    <mesh name="link_5" file="meshes/link_5.stl"/>
+    <mesh name="link_6" file="meshes/link_6.stl"/>
+    <mesh name="link_7" file="meshes/link_7.stl"/>
+    <mesh name="base10" file="meshes/schunk_left/base10.stl"/>
+    <mesh name="h10" file="meshes/schunk_left/h10.stl" scale="-1 1 1"/>
+    <mesh name="h11" file="meshes/schunk_left/h11.stl" scale="-1 1 1"/>
+    <mesh name="d10" file="meshes/schunk_left/d10.stl" scale="1 -1 1"/>
+    <mesh name="d11" file="meshes/schunk_left/d11.stl" scale="1 -1 -1"/>
+    <mesh name="d12" file="meshes/schunk_left/d12.stl" scale="1 -1 -1"/>
+    <mesh name="d13" file="meshes/schunk_left/d13.stl" scale="1 -1 -1"/>
+    <mesh name="f10" file="meshes/schunk_left/f10.stl"/>
+    <mesh name="f11" file="meshes/schunk_left/f11.stl"/>
+    <mesh name="f12" file="meshes/schunk_left/f12.stl"/>
+    <mesh name="f13" file="meshes/schunk_left/f13.stl"/>
+    <mesh name="f20" file="meshes/schunk_left/f20.stl"/>
+    <mesh name="f21" file="meshes/schunk_left/f21.stl"/>
+    <mesh name="f22" file="meshes/schunk_left/f22.stl"/>
+    <mesh name="f23" file="meshes/schunk_left/f23.stl"/>
+    <mesh name="f30" file="meshes/schunk_left/f30.stl"/>
+    <mesh name="f31" file="meshes/schunk_left/f31.stl"/>
+    <mesh name="f32" file="meshes/schunk_left/f32.stl"/>
+    <mesh name="f33" file="meshes/schunk_left/f33.stl"/>
+    <mesh name="f40" file="meshes/schunk_left/f40.stl"/>
+    <mesh name="f41" file="meshes/schunk_left/f41.stl"/>
+    <mesh name="f42" file="meshes/schunk_left/f42.stl"/>
+    <mesh name="f43" file="meshes/schunk_left/f43.stl"/>
+    <mesh name="Base10" file="meshes/schunk_right/Base10.stl"/>
+    <mesh name="H10" file="meshes/schunk_right/H10.stl"/>
+    <mesh name="H11" file="meshes/schunk_right/H11.stl"/>
+    <mesh name="D10" file="meshes/schunk_right/D10.stl"/>
+    <mesh name="D11" file="meshes/schunk_right/D11.stl"/>
+    <mesh name="D12" file="meshes/schunk_right/D12.stl"/>
+    <mesh name="D13" file="meshes/schunk_right/D13.stl"/>
+    <mesh name="F10" file="meshes/schunk_right/F10.stl"/>
+    <mesh name="F11" file="meshes/schunk_right/F11.stl"/>
+    <mesh name="F12" file="meshes/schunk_right/F12.stl"/>
+    <mesh name="F13" file="meshes/schunk_right/F13.stl"/>
+    <mesh name="F20" file="meshes/schunk_right/F20.stl"/>
+    <mesh name="F21" file="meshes/schunk_right/F21.stl"/>
+    <mesh name="F22" file="meshes/schunk_right/F22.stl"/>
+    <mesh name="F23" file="meshes/schunk_right/F23.stl"/>
+    <mesh name="F30" file="meshes/schunk_right/F30.stl"/>
+    <mesh name="F31" file="meshes/schunk_right/F31.stl"/>
+    <mesh name="F32" file="meshes/schunk_right/F32.stl"/>
+    <mesh name="F33" file="meshes/schunk_right/F33.stl"/>
+    <mesh name="F40" file="meshes/schunk_right/F40.stl"/>
+    <mesh name="F41" file="meshes/schunk_right/F41.stl"/>
+    <mesh name="F42" file="meshes/schunk_right/F42.stl"/>
+    <mesh name="F43" file="meshes/schunk_right/F43.stl"/>
+  </asset>
+  <worldbody>
+    <geom pos="0 0 0.1" type="mesh" mesh="body"/>
+    <body name="yumi_link_1_r" pos="0.05355 -0.0725 0.51492" quat="0.00739873 -0.317362 0.40541 -0.857245">
+      <inertial pos="0 -0.03 0.12" mass="2" diaginertia="0.1 0.1 0.1"/>
+      <joint name="yumi_joint_1_r" pos="0 0 0" axis="0 0 1" range="-2.94088 2.94088" damping="0.5"/>
+      <geom type="mesh" mesh="link_1"/>
+      <body name="yumi_link_2_r" pos="0.03 0 0.1" quat="0.707107 0.707107 0 0">
+        <inertial pos="0 0 0" mass="2" diaginertia="0.1 0.1 0.1"/>
+        <joint name="yumi_joint_2_r" pos="0 0 0" axis="0 0 1" range="-2.50455 0.759218" damping="0.5"/>
+        <geom type="mesh" mesh="link_2"/>
+        <body name="yumi_link_3_r" pos="-0.03 0.17283 0" quat="0.707107 -0.707107 0 0">
+          <inertial pos="0 0 0" mass="2" diaginertia="0.1 0.1 0.1"/>
+          <joint name="yumi_joint_7_r" pos="0 0 0" axis="0 0 1" range="-2.94088 2.94088" damping="0.5"/>
+          <geom type="mesh" mesh="link_3"/>
+          <body name="yumi_link_4_r" pos="-0.04188 0 0.07873" quat="0.5 0.5 -0.5 0.5">
+            <inertial pos="0 0 0" mass="2" diaginertia="0.1 0.1 0.1"/>
+            <joint name="yumi_joint_3_r" pos="0 0 0" axis="0 0 1" range="-2.15548 1.39626" damping="0.5"/>
+            <geom type="mesh" mesh="link_4"/>
+            <body name="yumi_link_5_r" pos="0.0405 0.16461 0" quat="0.707107 -0.707107 0 0">
+              <inertial pos="0 0 0" mass="2" diaginertia="0.1 0.1 0.1"/>
+              <joint name="yumi_joint_4_r" pos="0 0 0" axis="0 0 1" range="-5.06145 5.06145" damping="0.5"/>
+              <geom type="mesh" mesh="link_5"/>
+              <body name="yumi_link_6_r" pos="-0.027 0 0.10039" quat="0.707107 0.707107 0 0">
+                <inertial pos="0 0 0" mass="2" diaginertia="0.1 0.1 0.1"/>
+                <joint name="yumi_joint_5_r" pos="0 0 0" axis="0 0 1" range="-1.53589 2.40855" damping="0.5"/>
+                <geom type="mesh" mesh="link_6"/>
+                <body name="yumi_link_7_r" pos="0.027 0.029 0" quat="0.707107 -0.707107 0 0">
+                  <inertial pos="0.000390535 -0.000446883 0.00337192" quat="0.992629 0.0548184 0.0676793 -0.0842791" mass="2.41089" diaginertia="0.100873 0.100858 0.100272"/>
+                  <joint name="yumi_joint_6_r" pos="0 0 0" axis="0 0 1" range="-3.9968 3.9968" damping="0.5"/>
+                  <geom type="mesh" mesh="link_7"/>
+                  <geom pos="0 0 -0.032" quat="0.707388 0 0 0.706825" type="mesh" mesh="Base10"/>
+                  <geom quat="0.707388 0 0 0.706825" type="mesh" mesh="H10"/>
+                  <geom pos="0.02634 -2.22477e-05 0.110001" quat="0.000315616 0.707073 -0.000315585 0.707141" type="mesh" mesh="F20"/>
+                  <body name="Rvirtual_index_1" pos="0.0131101 -0.0250104 0.11" quat="0.000315616 0.707073 -0.000315585 0.707141">
+                    <joint name="RIndex_Spread" pos="0 0 0" axis="0 0 1" range="0 0.28833"/>
+                    <geom pos="0 0 0.01321" type="mesh" mesh="F10"/>
+                    <body name="Rindex_2" pos="0 0 0" quat="0.707141 -0.707073 0 0">
+                      <joint name="RIndex_Proximal" pos="0 0 0" axis="0 0 1" range="0 0.79849"/>
+                      <geom type="mesh" mesh="F11"/>
+                      <body name="Rindex_3" pos="0.04804 0 0">
+                        <joint name="RIndex_3" pos="0 0 0" axis="0 0 1" range="0 1.334"/>
+                        <geom type="mesh" mesh="F12"/>
+                        <body name="Rindex_4" pos="0.026 0 0">
+                          <joint name="RIndex_4" pos="0 0 0" axis="0 0 1" range="0 1.394"/>
+                          <geom type="mesh" mesh="F13"/>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                  <body name="Rmiddle_2" pos="0.01313 -1.04558e-05 0.11" quat="0.500175 0.499777 -0.500223 0.499825">
+                    <joint name="RMiddle_Proximal" pos="0 0 0" axis="0 0 1" range="0 0.79849"/>
+                    <geom type="mesh" mesh="F21"/>
+                    <body name="Rmiddle_3" pos="0.05004 0 0">
+                      <joint name="RMiddle_3" pos="0 0 0" axis="0 0 1" range="0 1.334"/>
+                      <geom type="mesh" mesh="F22"/>
+                      <body name="Rmiddle_4" pos="0.032 0 0">
+                        <joint name="RMiddle_4" pos="0 0 0" axis="0 0 1" range="0 1.334"/>
+                        <geom type="mesh" mesh="F23"/>
+                      </body>
+                    </body>
+                  </body>
+                  <body name="Re2" pos="0.00714465 0.0183943 0.0375" quat="0.707388 0 0 0.706825">
+                    <joint name="RPart_Hand" pos="0 0 0" axis="0 0 1" range="0 0.98786"/>
+                    <geom pos="-0.0007 0 -0.01002" type="mesh" mesh="H11"/>
+                    <body name="Rvirtual_pinky_1" pos="0.025355 -0.006 0.056" quat="0.500048 -0.5 -0.5 -0.499952">
+                      <joint name="RPinky_Spread" pos="0 0 0" axis="0 0 1" range="0 0.5829"/>
+                      <geom pos="0 0 -0.01321" type="mesh" mesh="F40"/>
+                      <body name="Rpinky_2" pos="0 0 0" quat="0.707141 0.707073 0 0">
+                        <joint name="RPinky_Proximal" pos="0 0 0" axis="0 0 1" range="0 0.98175"/>
+                        <geom type="mesh" mesh="F41"/>
+                        <body name="Rpinky_3" pos="0.04454 0 0">
+                          <joint name="RPinky_3" pos="0 0 0" axis="0 0 1" range="0 1.334"/>
+                          <geom type="mesh" mesh="F42"/>
+                          <body name="Rpinky_4" pos="0.022 0 0">
+                            <joint name="RPinky_4" pos="0 0 0" axis="0 0 1" range="0 1.3971"/>
+                            <geom type="mesh" mesh="F43"/>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                    <body name="Rvirtual_ring_1" pos="0.003855 -0.006 0.0655" quat="0.500048 -0.5 -0.5 -0.499952">
+                      <joint name="RRing_Spread" pos="0 0 0" axis="0 0 1" range="0 0.28833"/>
+                      <geom pos="0 0 -0.01321" type="mesh" mesh="F30"/>
+                      <body name="Rring_2" pos="0 0 0" quat="0.707141 0.707073 0 0">
+                        <joint name="RRing_Proximal" pos="0 0 0" axis="0 0 1" range="0 0.98175"/>
+                        <geom type="mesh" mesh="F31"/>
+                        <body name="Rring_3" pos="0.05004 0 0">
+                          <joint name="RRing_3" pos="0 0 0" axis="0 0 1" range="0 1.334"/>
+                          <geom type="mesh" mesh="F32"/>
+                          <body name="Rring_4" pos="0.032 0 0">
+                            <joint name="RRing_4" pos="0 0 0" axis="0 0 1" range="0 1.395"/>
+                            <geom type="mesh" mesh="F33"/>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                  <body name="Rthumb_1" pos="-0.0131435 -0.0168895 0" quat="0.000293792 -0.130526 3.86785e-05 0.991445">
+                    <joint name="RThumb_Opposition" pos="0 0 0" axis="0 0 -1" range="0 0.9879"/>
+                    <geom pos="0 0 0.02442" type="mesh" mesh="D10"/>
+                    <body name="Rthumb_3" pos="0 0 0.04596" quat="0.329798 0.625462 0.329771 0.625525">
+                      <joint name="RThumb_Flexion" pos="0 0 0" axis="0 0 1" range="0 0.9704"/>
+                      <geom type="mesh" mesh="D11"/>
+                      <body name="Rthumb_4" pos="0.0485 0 0">
+                        <joint name="RThumb_3" pos="0 0 0" axis="0 0 1" range="0 0.98506"/>
+                        <geom type="mesh" mesh="D12"/>
+                        <body name="Rthumb_5" pos="0.03 0 0">
+                          <joint name="RThumb_4" pos="0 0 0" axis="0 0 1" range="0 1.406"/>
+                          <geom type="mesh" mesh="D13"/>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    <body name="yumi_link_1_l" pos="0.05355 0.0725 0.51492" quat="0.00572459 0.318236 0.404752 0.857245">
+      <inertial pos="0 -0.03 0.12" mass="2" diaginertia="0.1 0.1 0.1"/>
+      <joint name="yumi_joint_1_l" pos="0 0 0" axis="0 0 1" range="-2.94088 2.94088" damping="0.5"/>
+      <geom type="mesh" mesh="link_1"/>
+      <body name="yumi_link_2_l" pos="0.03 0 0.1" quat="0.707107 0.707107 0 0">
+        <inertial pos="0 0 0" mass="2" diaginertia="0.1 0.1 0.1"/>
+        <joint name="yumi_joint_2_l" pos="0 0 0" axis="0 0 1" range="-2.50455 0.759218" damping="0.5"/>
+        <geom type="mesh" mesh="link_2"/>
+        <body name="yumi_link_3_l" pos="-0.03 0.17283 0" quat="0.707107 -0.707107 0 0">
+          <inertial pos="0 0 0" mass="2" diaginertia="0.1 0.1 0.1"/>
+          <joint name="yumi_joint_7_l" pos="0 0 0" axis="0 0 1" range="-2.94088 2.94088" damping="0.5"/>
+          <geom type="mesh" mesh="link_3"/>
+          <body name="yumi_link_4_l" pos="-0.04188 0 0.07873" quat="0.5 0.5 -0.5 0.5">
+            <inertial pos="0 0 0" mass="2" diaginertia="0.1 0.1 0.1"/>
+            <joint name="yumi_joint_3_l" pos="0 0 0" axis="0 0 1" range="-2.15548 1.39626" damping="0.5"/>
+            <geom type="mesh" mesh="link_4"/>
+            <body name="yumi_link_5_l" pos="0.0405 0.16461 0" quat="0.707107 -0.707107 0 0">
+              <inertial pos="0 0 0" mass="2" diaginertia="0.1 0.1 0.1"/>
+              <joint name="yumi_joint_4_l" pos="0 0 0" axis="0 0 1" range="-5.06145 5.06145" damping="0.5"/>
+              <geom type="mesh" mesh="link_5"/>
+              <body name="yumi_link_6_l" pos="-0.027 0 0.10039" quat="0.707107 0.707107 0 0">
+                <inertial pos="0 0 0" mass="2" diaginertia="0.1 0.1 0.1"/>
+                <joint name="yumi_joint_5_l" pos="0 0 0" axis="0 0 1" range="-1.53589 2.40855" damping="0.5"/>
+                <geom type="mesh" mesh="link_6"/>
+                <body name="yumi_link_7_l" pos="0.027 0.029 0" quat="0.707107 -0.707107 0 0">
+                  <inertial pos="0.000391246 0.000446262 0.00337192" quat="0.992689 -0.0547598 0.0677267 0.0835621" mass="2.41089" diaginertia="0.100873 0.100858 0.100272"/>
+                  <joint name="yumi_joint_6_l" pos="0 0 0" axis="0 0 1" range="-3.9968 3.9968" damping="0.5"/>
+                  <geom type="mesh" mesh="link_7"/>
+                  <geom pos="0 0 -0.032" quat="0.707388 0 0 0.706825" type="mesh" mesh="base10"/>
+                  <geom quat="0.707388 0 0 0.706825" type="mesh" mesh="h10"/>
+                  <geom pos="0.02634 -2.22477e-05 0.110001" quat="0.000315616 0.707073 -0.000315585 0.707141" type="mesh" mesh="f20"/>
+                  <body name="Lvirtual_index_1" pos="0.0131499 0.0249895 0.11" quat="0.000315616 0.707073 -0.000315585 0.707141">
+                    <joint name="LIndex_Spread" pos="0 0 0" axis="0 0 -1" range="0 0.28833"/>
+                    <geom pos="0 0 0.01321" type="mesh" mesh="f10"/>
+                    <body name="Lindex_2" pos="0 0 0" quat="0.707141 -0.707073 0 0">
+                      <joint name="LIndex_Proximal" pos="0 0 0" axis="0 0 1" range="0 0.79849"/>
+                      <geom type="mesh" mesh="f11"/>
+                      <body name="Lindex_3" pos="0.04804 0 0">
+                        <joint name="LIndex_3" pos="0 0 0" axis="0 0 1" range="0 1.334"/>
+                        <geom type="mesh" mesh="f12"/>
+                        <body name="Lindex_4" pos="0.026 0 0">
+                          <joint name="LIndex_4" pos="0 0 0" axis="0 0 1" range="0 1.394"/>
+                          <geom type="mesh" mesh="f13"/>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                  <body name="Lmiddle_2" pos="0.01313 -1.04558e-05 0.11" quat="0.500175 0.499777 -0.500223 0.499825">
+                    <joint name="LMiddle_Proximal" pos="0 0 0" axis="0 0 1" range="0 0.79849"/>
+                    <geom type="mesh" mesh="f21"/>
+                    <body name="Lmiddle_3" pos="0.05004 0 0">
+                      <joint name="LMiddle_3" pos="0 0 0" axis="0 0 1" range="0 1.334"/>
+                      <geom type="mesh" mesh="f22"/>
+                      <body name="Lmiddle_4" pos="0.032 0 0">
+                        <joint name="LMiddle_4" pos="0 0 0" axis="0 0 1" range="0 1.334"/>
+                        <geom type="mesh" mesh="f23"/>
+                      </body>
+                    </body>
+                  </body>
+                  <body name="Le2" pos="0.00711535 -0.0184057 0.0375" quat="0.707388 0 0 0.706825">
+                    <joint name="LPart_Hand" pos="0 0 0" axis="0 0 -1" range="0 0.98786"/>
+                    <geom pos="0.0007 0 -0.01002" type="mesh" mesh="h11"/>
+                    <body name="Lvirtual_pinky_1" pos="-0.025355 -0.006 0.056" quat="0.500048 -0.5 -0.5 -0.499952">
+                      <joint name="LPinky_Spread" pos="0 0 0" axis="0 0 -1" range="0 0.5829"/>
+                      <geom pos="0 0 -0.01321" type="mesh" mesh="f40"/>
+                      <body name="Lpinky_2" pos="0 0 0" quat="0.707141 0.707073 0 0">
+                        <joint name="LPinky_Proximal" pos="0 0 0" axis="0 0 1" range="0 0.98175"/>
+                        <geom type="mesh" mesh="f41"/>
+                        <body name="Lpinky_3" pos="0.04454 0 0">
+                          <joint name="LPinky_3" pos="0 0 0" axis="0 0 1" range="0 1.334"/>
+                          <geom type="mesh" mesh="f42"/>
+                          <body name="Lpinky_4" pos="0.022 0 0">
+                            <joint name="LPinky_4" pos="0 0 0" axis="0 0 1" range="0 1.3971"/>
+                            <geom type="mesh" mesh="f43"/>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                    <body name="virtual_ring_1" pos="-0.003855 -0.006 0.0655" quat="0.500048 -0.5 -0.5 -0.499952">
+                      <joint name="LRing_Spread" pos="0 0 0" axis="0 0 -1" range="0 0.28833"/>
+                      <geom pos="0 0 -0.01321" type="mesh" mesh="f30"/>
+                      <body name="ring_2" pos="0 0 0" quat="0.707141 0.707073 0 0">
+                        <joint name="LRing_Proximal" pos="0 0 0" axis="0 0 1" range="0 0.98175"/>
+                        <geom type="mesh" mesh="f31"/>
+                        <body name="ring_3" pos="0.05004 0 0">
+                          <joint name="LRing_3" pos="0 0 0" axis="0 0 1" range="0 1.334"/>
+                          <geom type="mesh" mesh="f32"/>
+                          <body name="ring_4" pos="0.032 0 0">
+                            <joint name="LRing_4" pos="0 0 0" axis="0 0 1" range="0 1.395"/>
+                            <geom type="mesh" mesh="f33"/>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                  <body name="Lthumb_1" pos="-0.0131165 0.0169105 0" quat="0.000293792 -0.130526 3.86785e-05 0.991445">
+                    <joint name="LThumb_Opposition" pos="0 0 0" axis="0 0 1" range="0 0.9879"/>
+                    <geom pos="0 0 0.02442" type="mesh" mesh="d10"/>
+                    <body name="Lthumb_3" pos="0 0 0.04596" quat="-0.329802 0.625465 -0.329766 0.625523">
+                      <joint name="LThumb_Flexion" pos="0 0 0" axis="0 0 -1" range="0 0.9704"/>
+                      <geom type="mesh" mesh="d11"/>
+                      <body name="Lthumb_4" pos="0.0485 0 0">
+                        <joint name="LThumb_3" pos="0 0 0" axis="0 0 -1" range="0 0.98506"/>
+                        <geom type="mesh" mesh="d12"/>
+                        <body name="Lthumb_5" pos="0.03 0 0">
+                          <joint name="LThumb_4" pos="0 0 0" axis="0 0 -1" range="0 1.406"/>
+                          <geom type="mesh" mesh="d13"/>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>
