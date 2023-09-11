@@ -37,7 +37,7 @@
               <body name="yumi_link_6_r" pos="-0.027 0 0.10039" quat="0.707107 0.707107 0 0">
                 <inertial pos="0 0 0" mass="2" diaginertia="0.1 0.1 0.1"/>
                 <joint name="yumi_joint_5_r" pos="0 0 0" axis="0 0 1" range="-1.53589 2.40855" damping="0.5"/>
-                <geom type="mesh" mesh="link_6"/>
+                <geom type="mesh" mesh="link_6" group="1"/>
                 <body name="yumi_link_7_r" pos="0.027 0.029 0" quat="0.707107 -0.707107 0 0">
                   <inertial pos="0 0 0" mass="2" diaginertia="0.1 0.1 0.1"/>
                   <joint name="yumi_joint_6_r" pos="0 0 0" axis="0 0 1" range="-3.9968 3.9968" damping="0.5"/>
