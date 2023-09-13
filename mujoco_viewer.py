@@ -1,13 +1,15 @@
-import mujoco
-import mujoco.viewer
+import mujoco as mj
+import mujoco.viewer as viewer
 import numpy as np
+import time
 
 
 class YumiSchunk:
     def __init__(self, render = True) -> None:
-        self.model = mujoco.MjModel.from_xml_path('yumi_gym/envs/assets/yumi_with_schunk_hands.xml')
-        self.data = mujoco.MjData(self.model)
-        self.viewer = mujoco.viewer.launch_passive(self.model, self.data)
+        self.model = mj.MjModel.from_xml_path('yumi_gym/envs/assets/yumi_with_schunk_hands.xml')
+        # self.model = mj.MjModel.from_xml_path('yumi_gym/envs/assets/yumi_with_inspire_hands.xml')
+        self.data = mj.MjData(self.model)
+        self.viewer = viewer.launch_passive(self.model, self.data)
         self.need_render = render
         if not self.need_render:
             self.viewer.close()
@@ -15,8 +17,8 @@ class YumiSchunk:
         # self.js = XboxController()
 
     def step(self,ctrl):
-        self.data.ctrl[:] = ctrl
-        mujoco.mj_step(self.model, self.data)
+        # self.data.ctrl[:] = ctrl
+        mj.mj_step(self.model, self.data)
 
     def render(self):
         if self.need_render:
@@ -51,8 +53,9 @@ class YumiSchunk:
         self.render()
 
     def direct_ja_control(self,joint_ang):
-        self.data.qpos[:7] = joint_ang
-        ctrl = np.zeros(9)
+        self.data.qpos[:] = joint_ang
+        # print(joint_ang)
+        ctrl = np.zeros(joint_ang.shape)
         self.step(ctrl)
         self.render()
     
@@ -98,68 +101,43 @@ class YumiSchunk:
 
 
     def simulate(self):
-        #initial state
-        home_angles_arm = [0, 0.4, np.pi, -np.pi+1.4, 0, -1, np.pi/2]
-        for i in range(50):
-            self.direct_ja_control(home_angles_arm)
-        # print("ja: ", self.get_current_ja_arm())
-        print("end effector position: ", KinovaGen3.forward_kinematics(self.get_current_ja_arm()))
-        # move towards hammer
-        current_tip_pos = KinovaGen3.forward_kinematics(self.get_current_ja_arm())[0]
-        current_tip_ang = np.array([0,0,0])
-        # target_tip_pos = np.array([0.5, 0, 0.18])
-        target_tip_pos = np.array([0.55,0.077,0.175])
-        target_tip_ang = np.array([0,0,np.pi/2])
-        distance_pos = target_tip_pos - current_tip_pos
-        distance_ang = target_tip_ang - current_tip_ang
-        frame = 100
-        for i in range(frame):
-            target_tip_v = np.concatenate([distance_pos, distance_ang])/(frame*0.002)
-            self.ik_multicriteria_damped_velo(target_tip_v)
-        print("end effector position: ", KinovaGen3.forward_kinematics(self.get_current_ja_arm()))
-        grasp_pos = 215
-        mag_force = 0
-        self.model.opt.gravity[-1] = -5
-        for i in range(200): 
-            self.grasp(grasp_pos,mag_force)
+        # #### body part ####
+        # for i in range(self.model.nbody):
+        #     print(i)
+        #     name = mj.mj_id2name(self.model, mj.mjtObj.mjOBJ_BODY, i)
+        #     print(name)
+        #     print("world position: ", self.data.xpos[i])
+        # #### joint part ####
+        # for i in range(self.model.nq):
+        #     print(i)
+        #     name = mj.mj_id2name(self.model, mj.mjtObj.mjOBJ_JOINT, i)
+        #     print(name)
+        #     # print("q position: ", self.data.qpos[i])
 
-        # raise the hammer
-        current_tip_pos = KinovaGen3.forward_kinematics(self.get_current_ja_arm())[0]
-        current_tip_ang = np.array([0,0,np.pi/2])
-        target_tip_pos = current_tip_pos.copy()
-        target_tip_pos[2] = 0.3
-        target_tip_ang = np.array([0,-np.pi/2,np.pi/2])
-        distance_pos = target_tip_pos - current_tip_pos
-        distance_ang = target_tip_ang - current_tip_ang
-        frame = 500
-        for i in range(frame):
-            target_tip_v = np.concatenate([distance_pos, distance_ang])/(frame*0.002)
-            self.move_after_grasp(target_tip_v,grasp_pos,mag_force)
-        print("end effector position: ", KinovaGen3.forward_kinematics(self.get_current_ja_arm()))
+        #     # print(self.data.efc_pos)
+        #     # mj.mjtConstraint.mjCNSTR_LIMIT_JOINT(self.model))
+        for jj in range(1000):
+            input_data = np.zeros(self.data.qpos.shape)
+            if jj != 0:
+                
+                #### schunk hand ####
+                hand_data = np.random.rand(self.data.qpos.shape[0])
+                # input_data[7:27] = hand_data[7:27]
+                # input_data[34:] = hand_data[34:]
+                # #### inspire hand ####
+                # hand_data = -np.random.rand(self.data.qpos.shape[0])*1.5
+                # input_data[7:19] = hand_data[7:19]
+                # input_data[26:] = hand_data[26:]
+            self.direct_ja_control(input_data)
+            # print(self.data.contact)
+            # print(self.data.contact.geom1.shape, self.data.contact.geom1)
+            couple = [(0, 1),(0, 21),(8, 18),(28, 38)]
+            for j in range(self.data.contact.geom1.shape[0]):
+                print("collision geom 1, body part {}: {}".format(self.data.contact.geom1[j], mj.mj_id2name(self.model, mj.mjtObj.mjOBJ_BODY, self.data.contact.geom1[j])))
+                print("collision geom 2, body part {}: {}".format(self.data.contact.geom2[j], mj.mj_id2name(self.model, mj.mjtObj.mjOBJ_BODY, self.data.contact.geom2[j])))
+            print()
+            time.sleep(5)
         
-        # move to the nail
-        current_tip_pos = KinovaGen3.forward_kinematics(self.get_current_ja_arm())[0]
-        current_tip_ang = np.array([0,-np.pi/2,np.pi/2])
-        target_tip_pos = np.array([0.75,-0.15,0.15])
-        target_tip_ang = np.array([0,-np.pi/2,np.pi/2])
-        distance_pos = target_tip_pos - current_tip_pos
-        distance_ang = target_tip_ang - current_tip_ang
-        frame = 500
-        for i in range(frame):
-            target_tip_v = np.concatenate([distance_pos, distance_ang])/(frame*0.002)
-            self.move_after_grasp(target_tip_v,grasp_pos,mag_force)
-            
-        # print("end effector position: ", KinovaGen3.forward_kinematics(self.get_current_ja_arm()))
-        # for i in range(100):
-        #     self.grasp(0)
-
-        # armq = np.copy(self.data.qpos[:7])
-        # for i in range(200):
-        #     target_grasp_v = 0.1
-        #     self.claw_grasp(armq,target_grasp_v)
-        # for i in range(200):
-        #     target_grasp_v = 0.1
-        #     self.claw_release(armq,target_grasp_v)
 
     
 

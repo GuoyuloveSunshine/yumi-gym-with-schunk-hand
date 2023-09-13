@@ -1,8 +1,8 @@
 import gym, yumi_gym
 import pybullet as p
 
-# env = gym.make('yumi-inspire')
-env = gym.make('yumi-schunk')
+env = gym.make('yumi-inspire')
+# env = gym.make('yumi-schunk')
 observation = env.reset()
 env.render()
 

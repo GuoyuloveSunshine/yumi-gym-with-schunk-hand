@@ -281,7 +281,7 @@
 
 
     <!-- RING FINGER LINKS -->
-    <link name="virtual_ring_1">
+    <link name="Lvirtual_ring_1">
       <visual>
         <origin xyz="0 0 -0.01321" />
         <geometry>
@@ -296,7 +296,7 @@
       </collision>
     </link>
 
-    <link name="ring_2">
+    <link name="Lring_2">
       <visual>
         <geometry>
           <mesh filename="package://meshes/schunk_left/f31.stl" />
@@ -309,7 +309,7 @@
       </collision>
     </link>
 
-    <link name="ring_3">
+    <link name="Lring_3">
       <visual>
         <geometry>
           <mesh filename="package://meshes/schunk_left/f32.stl" />
@@ -322,7 +322,7 @@
       </collision>
     </link>
 
-    <link name="ring_4">
+    <link name="Lring_4">
       <visual>
         <geometry>
           <mesh filename="package://meshes/schunk_left/f33.stl" />
@@ -566,7 +566,7 @@
   <!-- RING FINGER JOINTS -->
     <joint name="LRing_Spread" type="revolute">
       <parent link="Le5" />
-      <child link="virtual_ring_1" />
+      <child link="Lvirtual_ring_1" />
       <limit effort="1000.0" lower="0.0" upper="0.28833" velocity="1" />
       <origin xyz="-0.003855 0 0.0655" rpy="-1.5707 -1.5707 0" />
       <axis xyz="0 0 -1" />
@@ -574,16 +574,16 @@
     </joint>
 
     <joint name="LRing_Proximal" type="revolute">
-      <parent link="virtual_ring_1" />
-      <child link="ring_2" />
+      <parent link="Lvirtual_ring_1" />
+      <child link="Lring_2" />
       <limit effort="1000.0" lower="0.0" upper="0.98175" velocity="1" />
       <origin xyz="0 0 0" rpy="1.5707 0 0" />
       <axis xyz="0 0 1" />
     </joint>
 
     <joint name="LRing_3" type="revolute">
-      <parent link="ring_2" />
-      <child link="ring_3" />
+      <parent link="Lring_2" />
+      <child link="Lring_3" />
       <limit effort="1000.0" lower="0" upper="1.334" velocity="1" />
       <origin xyz="0.05004 0 0" rpy="0 0 0" />
       <axis xyz="0 0 1" />
@@ -591,8 +591,8 @@
     </joint>
 
     <joint name="LRing_4" type="revolute">
-      <parent link="ring_3" />
-      <child link="ring_4" />
+      <parent link="Lring_3" />
+      <child link="Lring_4" />
       <limit effort="1000.0" lower="0" upper="1.395" velocity="1" />
       <origin xyz="0.032 0 0" rpy="0 0 0" />
       <axis xyz="0 0 1" />

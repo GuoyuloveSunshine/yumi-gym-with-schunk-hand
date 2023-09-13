@@ -256,16 +256,16 @@
                         </body>
                       </body>
                     </body>
-                    <body name="virtual_ring_1" pos="-0.003855 -0.006 0.0655" quat="0.500048 -0.5 -0.5 -0.499952">
+                    <body name="Lvirtual_ring_1" pos="-0.003855 -0.006 0.0655" quat="0.500048 -0.5 -0.5 -0.499952">
                       <joint name="LRing_Spread" pos="0 0 0" axis="0 0 -1" range="0 0.28833"/>
                       <geom pos="0 0 -0.01321" type="mesh" mesh="f30"/>
-                      <body name="ring_2" pos="0 0 0" quat="0.707141 0.707073 0 0">
+                      <body name="Lring_2" pos="0 0 0" quat="0.707141 0.707073 0 0">
                         <joint name="LRing_Proximal" pos="0 0 0" axis="0 0 1" range="0 0.98175"/>
                         <geom type="mesh" mesh="f31"/>
-                        <body name="ring_3" pos="0.05004 0 0">
+                        <body name="Lring_3" pos="0.05004 0 0">
                           <joint name="LRing_3" pos="0 0 0" axis="0 0 1" range="0 1.334"/>
                           <geom type="mesh" mesh="f32"/>
-                          <body name="ring_4" pos="0.032 0 0">
+                          <body name="Lring_4" pos="0.032 0 0">
                             <joint name="LRing_4" pos="0 0 0" axis="0 0 1" range="0 1.395"/>
                             <geom type="mesh" mesh="f33"/>
                           </body>
