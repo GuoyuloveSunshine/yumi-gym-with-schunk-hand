@@ -25,9 +25,9 @@ def draw_human_3d(l_joint_pos, r_joint_pos, l_hand_pos, r_hand_pos, save_path):
     fig = plt.figure()
     ax = plt.axes(projection = "3d")
     
-    X = -np.concatenate((l_joint_pos[:, 0], r_joint_pos[:, 0], l_hand_pos[:, 0], r_hand_pos[:, 0]), axis = 0)
-    Y = np.concatenate((l_joint_pos[:, 1], r_joint_pos[:, 1], l_hand_pos[:, 1], r_hand_pos[:, 1]), axis = 0)
-    Z = -np.concatenate((l_joint_pos[:, 2], r_joint_pos[:, 2], l_hand_pos[:, 2], r_hand_pos[:, 2]), axis = 0)
+    X = np.concatenate((l_joint_pos[... , 0], r_joint_pos[..., 0], l_hand_pos[..., 0], r_hand_pos[..., 0]), axis = 0)
+    Y = np.concatenate((l_joint_pos[..., 1], r_joint_pos[... , 1], l_hand_pos[... , 1], r_hand_pos[... , 1]), axis = 0)
+    Z = np.concatenate((l_joint_pos[..., 2], r_joint_pos[... , 2], l_hand_pos[... , 2], r_hand_pos[... , 2]), axis = 0)
     ax.scatter3D(X,Y,Z,c="red")
     for pair in pair_total:
         xPair = [X[pair[0]], X[pair[1]]]
@@ -35,16 +35,16 @@ def draw_human_3d(l_joint_pos, r_joint_pos, l_hand_pos, r_hand_pos, save_path):
         zPair = [Z[pair[0]], Z[pair[1]]]
 
         ax.plot(xPair, yPair, zPair, color = 'green', linewidth = 5)
-    ax.set_xlim([-0.6,0.6])
-    ax.set_ylim([0,1])
-    ax.set_zlim([-0.5,0.5])
+    ax.set_xlim([0,0.5])
+    ax.set_ylim([-0.3,0.3])
+    ax.set_zlim([0.5,1])
     ax.set_xlabel("x")
     ax.set_ylabel("y")
     ax.set_zlabel("z")
-    ax.view_init(90,0,90)
+    ax.view_init(30,0,0)
     if save_p:
         plt.savefig(save_path)
-    plt.show()
+    # plt.show()
     # fig.canvas.draw()
     # img = np.fromstring(fig.canvas.tostring_rgb(), dtype = np.uint8, sep="")
     # return img
@@ -63,6 +63,7 @@ l_hand_pos = group1.get('l_hand_pos')
 r_hand_pos = group1.get('r_hand_pos')
 
 # print(l_hand_pos[0])
+print(l_joint_pos.shape)
 total_frames = l_joint_pos.shape[0]
 # print(l_joint_pos.shape, r_joint_pos.shape)
 
