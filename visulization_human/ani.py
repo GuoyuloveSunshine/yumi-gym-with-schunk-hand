@@ -1,1 +1,0 @@
-def draw_human_3d()

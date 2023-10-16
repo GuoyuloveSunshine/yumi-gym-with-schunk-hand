@@ -17,8 +17,8 @@ def draw_human_3d(l_joint_pos, r_joint_pos, l_hand_pos, r_hand_pos, save_path):
     pair_total = np.concatenate((pair_arm, pair_arm+num_arm_joint,pair_hand+2*num_arm_joint, pair_hand+2*num_arm_joint+num_hand_joint), axis=0)
 
     # print(pair_total)
-    print(l_joint_pos)
-    print(r_joint_pos)
+    # print(l_joint_pos)
+    # print(r_joint_pos)
     l_hand_pos = l_hand_pos + l_joint_pos[2]
     r_hand_pos = r_hand_pos + r_joint_pos[2]
 
@@ -52,8 +52,9 @@ def draw_human_3d(l_joint_pos, r_joint_pos, l_hand_pos, r_hand_pos, save_path):
 
 # action = "source_吃饭-chifan.h5"
 # action = "source_睡觉-shuijiao.h5"
-action = "source_上楼梯-shanglouti.h5"
-hf = h5py.File('./data/human/'+action, 'r')
+folder = "schunk/woHands/"
+action = "source_交通-jiaotong.h5"
+hf = h5py.File('./data/'+folder+action, 'r')
 key = "group1"
 group1 = hf.get(key)
 print(group1.keys())

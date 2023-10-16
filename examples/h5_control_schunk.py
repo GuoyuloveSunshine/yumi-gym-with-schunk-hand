@@ -5,12 +5,15 @@ import h5py
 import time
 
 
-hf = h5py.File('./data/schunk/inference_xueyuan.h5', 'r')
+# hf = h5py.File('./data/schunk/inference_xueyuan.h5', 'r')
+# key = "group1"
+
+# hf = h5py.File('./data/schunk/xyzw/inference_shanglouti.h5', 'r')
+# key = "group1"
+
+hf = h5py.File('./data/schunk/woHands-xyz/inference_shanglouti.h5', 'r')
 key = "group1"
-# hf = h5py.File('./data/mocap_data_YuMi_affine_execute.h5', 'r')
-# key = 'fengren.bag'
-# hf = h5py.File('./data/mocap_data_YuMi_affine_execute.h5', 'r')
-# key = 'fengren.bag'
+
 group1 = hf.get(key)
 print(group1.keys())
 l_joint_angle = group1.get('l_joint_angle')
