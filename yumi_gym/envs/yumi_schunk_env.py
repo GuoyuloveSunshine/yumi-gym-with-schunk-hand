@@ -50,8 +50,8 @@ class YumiSchunkEnv(gym.Env):
                 collision = True
                 for contact in p.getContactPoints(bodyA=self.yumiUid, linkIndexA=self.joint2Index[joint]):
                     print("Collision Occurred in Joint {} & Joint {}!!!".format(contact[3], contact[4]))
-                    p.changeVisualShape(self.yumiUid, contact[3], rgbaColor=[1, 0, 0, 1])
-                    p.changeVisualShape(self.yumiUid, contact[4], rgbaColor=[1, 0, 0, 1])
+                    # p.changeVisualShape(self.yumiUid, contact[3], rgbaColor=[1, 0, 0, 1])
+                    # p.changeVisualShape(self.yumiUid, contact[4], rgbaColor=[1, 0, 0, 1])
         
         self.step_counter += 1
 
